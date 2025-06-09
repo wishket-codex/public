@@ -3,553 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>위시켓 Growth Partner | 플랫폼 비즈니스 성장 컨설팅</title>
-    <meta name="description" content="위시켓의 Growth Partner 서비스로 마켓플레이스/플랫폼 비즈니스의 생존을 넘어 지속 가능한 성장을 이루세요.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>위시켓 그로스 파트너 | 플랫폼 비즈니스 성장 컨설팅</title>
+    <meta name="description" content="위시켓의 그로스 서비스로 플랫폼 비즈니스의 생존을 넘어 독보적으로 성장하세요.">    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* 기본 스타일 설정 */
-        :root {
-            --primary: #1D6FF2;
-            --primary-dark: #0D5ADF;
-            --secondary: #FF5722;
-            --text: #333333;
-            --text-light: #666666;
-            --light-bg: #F8F9FA;
-            --border: #E1E4E8;
-            --white: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        /* 헤더 스타일 */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-        
-        .logo img {
-            height: 36px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary);
-        }
-        
-        .header-buttons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline {
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            background-color: transparent;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        /* 히어로 섹션 */
-        .hero {
-            padding: 140px 0 80px;
-            background: linear-gradient(120deg, #1D6FF2, #3F8FFF);
-            color: var(--white);
-        }
-          .hero-content {
-            max-width: 800px; /* 700px에서 800px로 늘려서 더 많은 텍스트 공간 확보 */
-        }
-        
-        .hero-title {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            word-break: keep-all; /* 한글 단어 사이에서 줄바꿈 방지 */
-            overflow-wrap: break-word; /* 필요한 경우 긴 단어 줄바꿈 허용 */
-        }
-        
-        .hero-subtitle {
-            font-size: 20px;
-            margin-bottom: 30px;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-        
-        .hero-cta {
-            margin-top: 40px;
-        }
-        
-        .btn-large {
-            padding: 14px 30px;
-            font-size: 18px;
-        }
-        
-        /* 섹션 공통 스타일 */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--text-light);
-            text-align: center;
-            margin-bottom: 50px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* 니즈 섹션 */
-        .needs {
-            background-color: var(--light-bg);
-        }
-        
-        .needs-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .need-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .need-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .need-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .need-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .need-text {
-            color: var(--text-light);
-        }
-        
-        /* 솔루션 섹션 */
-        .solutions {
-            background-color: var(--white);
-        }
-        
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .solution-card {
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .solution-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .solution-tag {
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background-color: var(--secondary);
-            color: var(--white);
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-        
-        .solution-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        .solution-features {
-            margin-top: 20px;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-        
-        .feature-icon {
-            color: var(--primary);
-            margin-right: 10px;
-            min-width: 20px;
-            font-weight: bold;
-        }
-        
-        /* 왜 위시켓인가 섹션 */
-        .why-wishket {
-            background-color: var(--light-bg);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .value-card {
-            background-color: var(--white);
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .value-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .value-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .value-text {
-            color: var(--text-light);
-        }
-        
-        /* CTA 섹션 */
-        .cta {
-            background: linear-gradient(120deg, #1D6FF2, #3F8FFF);
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .cta-text {
-            font-size: 18px;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn-white {
-            background-color: var(--white);
-            color: var(--primary);
-            border: none;
-        }
-        
-        .btn-white:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        
-        /* 푸터 스타일 */
-        footer {
-            background-color: var(--text);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 60px 0 30px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h4 {
-            color: var(--white);
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo img {
-            height: 30px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-text {
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--white);
-        }
-        
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        
-        /* 반응형 스타일 */
-        @media (max-width: 992px) {
-            .header-container {
-                height: 70px;
-            }
-            
-            .hero-title {
-                font-size: 40px;
-            }
-            
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .needs-grid, .solutions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu, .header-buttons {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero-title {
-                font-size: 32px;
-            }
-            
-            .hero-subtitle {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-        }
-        
-        /* 모바일 메뉴 */
-        .mobile-menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100%;
-            background-color: var(--white);
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1001;
-            transition: all 0.3s ease;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        .mobile-menu-close {
-            text-align: right;
-            font-size: 24px;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        
-        .mobile-menu-links li {
-            margin-bottom: 15px;
-        }
-        
-        .mobile-menu-links a {
-            font-size: 18px;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: none;
-        }
-        
-        .overlay.active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- 헤더 -->
@@ -594,7 +51,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">                <h1 class="hero-title">플랫폼 비즈니스의 정답.<br>위시켓과 함께 독보적으로 성장하세요</h1>
-                <p class="hero-subtitle">위시켓은 중개 플랫폼의 성장 단계에 맞춤화된 그로스 & 테크 컨설팅 및<br> 운영 서비스를 제공, 성장 엔진이 멈추지 않게 지원합니다.</p>
+                <p class="hero-subtitle">위시켓은 중개 플랫폼의 성장 단계에 맞춤화된 그로스 & 테크 컨설팅과<br> 운영 및 관리 서비스를 제공, 성장 엔진이 멈추지 않게 지원합니다.</p>
                 <div class="hero-cta">
                     <a href="#" class="btn btn-primary btn-large">무료 상담 신청하기</a>
                 </div>
@@ -650,9 +107,8 @@
             
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <span class="solution-tag">CORE</span>
-                    <h3 class="solution-title">프로덕트 고도화</h3>
-                    <p>온보딩부터 리텐션까지,핵심 지표 개선을 위한 프로덕트 분석 및 최적화</p>
+                    <span class="solution-tag">CORE</span>                    <h3 class="solution-title">프로덕트 고도화</h3>
+                    <p>온보딩부터 리텐션까지, 핵심 지표 개선을 위한 프로덕트 분석 및 최적화</p>
                     <ul class="solution-features">
                         <li class="feature-item">
                             <span class="feature-icon">✓</span>
@@ -740,7 +196,7 @@
             <div class="solution-tabs">
                 <button class="tab-button active" data-tab="product">프로덕트 고도화</button>
                 <button class="tab-button" data-tab="growth">그로스 & 세일즈</button>
-                <button class="tab-button" data-tab="data">데이터 기반 의사결정</button>
+                <button class="tab-button" data-tab="data">데이터/AI 기반 운영</button>
                 <button class="tab-button" data-tab="tech">기술 인프라</button>
             </div>
             
@@ -930,160 +386,319 @@
                 </div>
                 <!-- 프로덕트 고도화 탭 (리디자인) 끝 -->
 
-                <!-- 추가 CSS (기존 style 태그에 삽입) -->
-                <style>
-                .funnel-group { margin-bottom: 60px; }
-                .funnel-label { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
-                .service-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; }
-                .service-card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:20px; transition:all .3s ease; }
-                .service-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,.08); transform:translateY(-4px); }
-                .service-title { font-size:16px; font-weight:600; margin-bottom:8px; color: var(--text); }
-                .service-desc { font-size:14px; color: var(--text-light); margin-bottom:16px; }
-                .service-meta { display:flex; justify-content:space-between; font-size:13px; font-weight:500; }
-                .service-price { color: var(--secondary); }
-                .service-duration { color: var(--text-light); }
 
-                @media (max-width:768px){
-                    .funnel-label{margin-bottom:12px;font-size:18px;}
-                }
-                </style>
-
-                <!-- 그로스 & 세일즈 탭 -->
                 <div class="tab-content" id="growth-tab">
-                    <div class="solution-detail-header">
-                        <div class="solution-detail-icon">📈</div>
-                        <div class="solution-detail-intro">
-                            <h3>그로스 & 세일즈 자동화: 수익을 극대화하는 법</h3>
-                            <p>최소 리소스로 최대 효율의 마케팅과 세일즈 파이프라인을 설계합니다.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="strategy-grid">
-                        <div class="strategy-card">
-                            <div class="strategy-icon">🎯</div>
-                            <div class="strategy-content">
-                                <h4>마케팅 최적화</h4>
-                                <ul class="strategy-list">
-                                    <li>유료 광고(ROAS) 최적화 & SEO/콘텐츠 마케팅</li>
-                                    <li>랜딩 페이지 & 온보딩 메시지 최적화 (A/B 테스트)</li>
-                                </ul>
-                                <p class="strategy-desc">광고 효율을 높이고, 검색 엔진에 최적화된 콘텐츠로 오가닉 트래픽을 확보합니다. 데이터 기반 A/B 테스트로 전환율을 과학적으로 끌어올립니다.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="strategy-card">
-                            <div class="strategy-icon">💼</div>
-                            <div class="strategy-content">
-                                <h4>세일즈 자동화</h4>
-                                <ul class="strategy-list">
-                                    <li>리드 스코어링 & 이메일 시퀀스 자동화</li>
-                                    <li>견적-제안서 자동화(CPQ) & 전자계약 연동</li>
-                                </ul>
-                                <p class="strategy-desc">구매 가능성 높은 고객을 자동으로 선별하고, 시나리오에 맞춰 영업 메시지를 발송합니다. 복잡한 제안 과정을 자동화하고, 계약 체결까지의 시간을 획기적으로 단축합니다.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="strategy-card">
-                            <div class="strategy-icon">💰</div>
-                            <div class="strategy-content">
-                                <h4>매출/LTV 극대화</h4>
-                                <ul class="strategy-list">
-                                    <li>재활성화 Win-back 캠페인</li>
-                                    <li>PR/IR 브랜딩</li>
-                                </ul>
-                                <p class="strategy-desc">이탈 고객을 다시 불러오고, 플랫폼의 브랜드 가치를 높여 장기적인 성장을 도모합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-cta">
-                        <a href="#" class="btn btn-primary">그로스 & 세일즈 상담 신청</a>
+                <div class="solution-detail-header">
+                    <div class="solution-detail-icon">📈</div>
+                    <div class="solution-detail-intro">
+                    <h3>그로스 &amp; 세일즈 자동화: 수익을 극대화하는 법</h3>
+                    <p>최소 리소스로 최대 효율의 마케팅/세일즈 파이프라인을 설계합니다.</p>
                     </div>
                 </div>
-                
-                <!-- 데이터 기반 의사결정 탭 -->
+
+                <!-- 퍼널 단계별 카드형 서비스 맵 -->
+                <div class="growth-funnels">
+
+                    <!-- 01 · 획득 -->
+                    <section class="funnel-group">
+                    <h4 class="funnel-title">01 · 획득 (Acquire)</h4>
+                    <div class="service-grid">
+                        <div class="service-card">
+                        <span class="service-name">SEO & 콘텐츠 마케팅</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">인플루언서·파트너 프로모션</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">유료 광고 ROAS 최적화</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                    </div>
+                    </section>
+
+                    <!-- 02 · 활성화 -->
+                    <section class="funnel-group">
+                    <h4 class="funnel-title">02 · 활성화 (Activate)</h4>
+                    <div class="service-grid">
+                        <!-- 그로스 캠페인 -->
+                        <div class="service-card">
+                        <span class="service-name">In-app 메시지 & 툴팁</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">온보딩 메시징</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">랜딩 페이지 리뉴얼</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+
+                        <!-- 세일즈 파이프라인 -->
+                        <div class="service-card">
+                        <span class="service-name">계약 전 전자서명 연동</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">세일즈 플레이북 & 콜 스크립트</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">Deal Desk 워크플로우</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">딜 성사 가능성 예측</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">딜 단계 캔반 (Deal Board)</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">견적·제안서 CPQ 시스템</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">세일즈 이메일 시퀀스</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">리드 배정</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">리드 스코어링</span>
+                        <span class="service-tag sales">세일즈 파이프라인</span>
+                        </div>
+                    </div>
+                    </section>
+
+                    <!-- 03 · 추천 -->
+                    <section class="funnel-group">
+                    <h4 class="funnel-title">03 · 추천 (Recommend)</h4>
+                    <div class="service-grid">
+                        <div class="service-card">
+                        <span class="service-name">UGC·소셜 증명 캠페인</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">추천인(Referral) 리워드</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                    </div>
+                    </section>
+
+                    <!-- 04 · 리텐션 -->
+                    <section class="funnel-group">
+                    <h4 class="funnel-title">04 · 리텐션 (Retention)</h4>
+                    <div class="service-grid">
+                        <div class="service-card">
+                        <span class="service-name">커뮤니티/게임화 챌린지</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">행동 기반 이메일·푸시</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                    </div>
+                    </section>
+
+                    <!-- 05 · 매출 / LTV -->
+                    <section class="funnel-group">
+                    <h4 class="funnel-title">05 · 매출 / LTV (Revenue)</h4>
+                    <div class="service-grid">
+                        <div class="service-card">
+                        <span class="service-name">PR/IR 브랜딩</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                        <div class="service-card">
+                        <span class="service-name">재활성화 Win-back 캠페인</span>
+                        <span class="service-tag growth">그로스 캠페인</span>
+                        </div>
+                    </div>
+                    </section>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="solution-cta">
+                    <a href="#" class="btn btn-primary">그로스 & 세일즈 상담 신청</a>
+                </div>
+                </div>
+
+
+                <!-- 데이터 기반 의사결정 컨텐츠 : START -->
                 <div class="tab-content" id="data-tab">
-                    <div class="solution-detail-header">
-                        <div class="solution-detail-icon">📊</div>
-                        <div class="solution-detail-intro">
-                            <h3>데이터 기반 의사결정 시스템 & 최적의 디지털 툴 셋업</h3>
-                            <p>성공적인 플랫폼은 '감'이 아닌 '데이터'로 소통하고 결정합니다.</p>
-                        </div>
-                    </div>
-                    
                     <div class="data-solution-content">
-                        <h4>최적의 디지털 툴 셋업 및 연동</h4>
-                        <p>아래 툴들을 포함하여, 귀사의 비즈니스 모델에 가장 적합한 솔루션을 선정하고 유기적으로 연동하여 시너지를 극대화합니다.</p>
-                        
-                        <div class="tools-table">
-                            <div class="tools-table-header">
-                                <div class="table-col">분류</div>
-                                <div class="table-col">대표 솔루션</div>
-                                <div class="table-col">위시켓의 컨설팅 영역</div>
-                            </div>
-                            
-                            <div class="tools-table-row">
-                                <div class="table-col">제품/행동 분석</div>
-                                <div class="table-col">Amplitude, Mixpanel, GA4</div>
-                                <div class="table-col">핵심 지표(OMTM) 설계, 이벤트 트래킹, 유저 퍼널 분석, 리텐션 대시보드 구축</div>
-                            </div>
-                            
-                            <div class="tools-table-row">
-                                <div class="table-col">BI/시각화 대시보드</div>
-                                <div class="table-col">Tableau, Power BI, Looker</div>
-                                <div class="table-col">전사 데이터 통합, 비즈니스 성과(매출, 거래액) 실시간 모니터링 대시보드 제작</div>
-                            </div>
-                            
-                            <div class="tools-table-row">
-                                <div class="table-col">데이터 웨어하우스</div>
-                                <div class="table-col">AWS (S3, Athena), BigQuery</div>
-                                <div class="table-col">확장 가능한 데이터 인프라 설계 및 구축, 데이터 파이프라인 자동화(ETL)</div>
-                            </div>
-                            
-                            <div class="tools-table-row">
-                                <div class="table-col">마케팅 자동화</div>
-                                <div class="table-col">Hubspot, Make, Zapier</div>
-                                <div class="table-col">리드 관리 및 육성(Nurturing) 시나리오 설계, 광고 채널 성과 통합 분석</div>
-                            </div>
-                        </div>
-                        
-                        <div class="ai-solutions">
-                            <h4>AI 기반 운영 자동화</h4>
-                            <p>수집된 데이터를 활용하여 사람의 한계를 넘어서는 '스마트 플랫폼'을 구현합니다.</p>
-                            
-                            <div class="ai-features">
-                                <div class="ai-feature">
-                                    <div class="ai-feature-icon">🤖</div>
-                                    <div class="ai-feature-content">
-                                        <h5>고객지원 자동화</h5>
-                                        <p>반복 문의는 챗봇/전화봇이 24시간 처리하여 CS 리소스를 절감합니다.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="ai-feature">
-                                    <div class="ai-feature-icon">🔄</div>
-                                    <div class="ai-feature-content">
-                                        <h5>자동 매칭/추천</h5>
-                                        <p>AI가 수요자와 공급자의 조건을 분석하여 최적의 상대를 추천, 매칭 성공률을 높입니다.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="ai-feature">
-                                    <div class="ai-feature-icon">⚠️</div>
-                                    <div class="ai-feature-content">
-                                        <h5>이상 거래/이탈 감지</h5>
-                                        <p>사기 거래, 어뷰징, 이탈 가능성이 높은 사용자를 AI가 사전에 예측하고 경고합니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="solution-cta">
-                        <a href="#" class="btn btn-primary">데이터 솔루션 상담 신청</a>
+
+                <!-- ============ AI 자동화 ============ -->
+                <div class="data-category">
+                    <div class="data-category-header" role="button">🤖 AI 자동화</div>
+                    <div class="data-category-body">
+
+                    <!-- 활성화 -->
+                    <h4 class="funnel-heading">2. 활성화</h4>
+                    <ul class="service-list">
+                        <li>견적 시뮬레이션</li>
+                        <li>계약서 초안 작성</li>
+                        <li>이메일 고객지원</li>
+                        <li>챗봇 고객지원</li>
+                        <li>지원/제안 내용 작성</li>
+                        <li>의뢰 내용 작성</li>
+                        <li>전화 고객지원</li>
+                    </ul>
+
+                    <!-- 리텐션 -->
+                    <h4 class="funnel-heading">4. 리텐션</h4>
+                    <ul class="service-list">
+                        <li>거래/프로젝트 브리프</li>
+                    </ul>
+
+                    <!-- 매출 / LTV -->
+                    <h4 class="funnel-heading">5. 매출 / LTV</h4>
+                    <ul class="service-list">
+                        <li>자동 매칭/추천</li>
+                        <li>이탈·이상거래 감지</li>
+                    </ul>
+
                     </div>
                 </div>
-                
+
+                <!-- ============ 데이터 드리븐 ============ -->
+                <div class="data-category">
+                    <div class="data-category-header" role="button">📊 데이터 드리븐</div>
+                    <div class="data-category-body">
+
+                    <h4 class="funnel-heading">0. 기초</h4>
+                    <ul class="service-list">
+                        <li>가정 구체화·가설 설정</li>
+                        <li>AI 분석·조기 경보</li>
+                        <li>대시보드·알림 설정</li>
+                        <li>그로스 지표 / KPI 체계 수립</li>
+                    </ul>
+
+                    </div>
+                </div>
+
+                <!-- ============ 디지털 툴 ============ -->
+                <div class="data-category">
+                    <div class="data-category-header" role="button">🛠️ 디지털 툴</div>
+                    <div class="data-category-body">
+
+                    <!-- 0. 기초 -->
+                    <h4 class="funnel-heading">0. 기초</h4>
+                    <div class="tool-grid">
+                        <!-- 카드 예시 -->
+                        <div class="tool-card">
+                        <img src="images/tools/make.svg" alt="Make" class="tool-logo">
+                        <div class="tool-name">Make / Zapier</div>
+                        <div class="chip">워크플로 자동화</div>
+                        </div>
+
+                        <div class="tool-card">
+                        <img src="images/tools/notion.png" alt="Notion" class="tool-logo">
+                        <div class="tool-name">Notion / Confluence / Github</div>
+                        <div class="chip">지식 · 협업</div>
+                        </div>
+
+                        <div class="tool-card">
+                        <img src="images/tools/slack.png" alt="Slack" class="tool-logo">
+                        <div class="tool-name">Slack / 잔디</div>
+                        <div class="chip">커뮤니케이션</div>
+                        </div>
+
+                        <div class="tool-card">
+                        <img src="images/tools/aws.png" alt="AWS" class="tool-logo">
+                        <div class="tool-name">AWS (S3·Athena·Glue)</div>
+                        <div class="chip">데이터 레이크</div>
+                        </div>
+
+                        <div class="tool-card">
+                        <img src="images/tools/tableau.png" alt="Tableau" class="tool-logo">
+                        <div class="tool-name">Tableau / Power BI / Looker</div>
+                        <div class="chip">BI · 대시보드</div>
+                        </div>
+
+                        <div class="tool-card">
+                        <img src="images/tools/amplitude.png" alt="Amplitude" class="tool-logo">
+                        <div class="tool-name">Amplitude / Mixpanel / GA4</div>
+                        <div class="chip">제품 분석</div>
+                        </div>
+                    </div><!-- /.tool-grid -->
+
+                    <!-- 1.획득 -->
+                    <h4 class="funnel-heading">1. 획득</h4>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                        <img src="images/tools/hubspot.png" alt="Hubspot" class="tool-logo">
+                        <div class="tool-name">Hubspot</div>
+                        <div class="chip">마케팅 자동화</div>
+                        </div>
+                    </div>
+
+                    <!-- 2.활성화 -->
+                    <h4 class="funnel-heading">2. 활성화</h4>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                        <img src="images/tools/crazyegg.png" alt="Crazy Egg" class="tool-logo">
+                        <div class="tool-name">Crazy Egg</div>
+                        <div class="chip">A/B 테스트</div>
+                        </div>
+                        <div class="tool-card">
+                        <img src="images/tools/hotjar.png" alt="Hotjar" class="tool-logo">
+                        <div class="tool-name">Hotjar</div>
+                        <div class="chip">세션 분석</div>
+                        </div>
+                    </div>
+
+                    <!-- 4.리텐션 -->
+                    <h4 class="funnel-heading">4. 리텐션</h4>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                        <img src="images/tools/jira.png" alt="Jira" class="tool-logo">
+                        <div class="tool-name">Jira / Trello</div>
+                        <div class="chip">이슈·티켓</div>
+                        </div>
+                        <div class="tool-card">
+                        <img src="images/tools/sendgrid.png" alt="Sendgrid" class="tool-logo">
+                        <div class="tool-name">Sendgrid / Stibee / Apollo</div>
+                        <div class="chip">이메일 자동화</div>
+                        </div>
+                    </div>
+
+                    <!-- 5.매출 / LTV -->
+                    <h4 class="funnel-heading">5. 매출 / LTV</h4>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                        <img src="images/tools/prix.png" alt="Prix" class="tool-logo">
+                        <div class="tool-name">Prix / 모두싸인</div>
+                        <div class="chip">전자계약</div>
+                        </div>
+                        <div class="tool-card">
+                        <img src="images/tools/odoo.png" alt="Odoo" class="tool-logo">
+                        <div class="tool-name">Odoo / 더존 / 영림원 / SAP</div>
+                        <div class="chip">ERP</div>
+                        </div>
+                        <div class="tool-card">
+                        <img src="images/tools/salesforce.png" alt="Salesforce" class="tool-logo">
+                        <div class="tool-name">Salesforce Sales Cloud</div>
+                        <div class="chip">CRM</div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="solution-cta">
+                    <a href="#" class="btn btn-primary">데이터 솔루션 상담 신청</a>
+                </div>
+
+                    </div> <!-- end of #data-tab -->
+
                 <!-- 기술 인프라 탭 -->
                 <div class="tab-content" id="tech-tab">
                     <div class="solution-detail-header">
@@ -1148,395 +763,6 @@
         </div>
     </section>
     
-    <!-- 해당 섹션에 필요한 CSS 스타일 추가 -->
-    <style>
-        /* 상세 솔루션 섹션 스타일 */
-        .detailed-solutions {
-            background-color: #f9fafc;
-            padding: 80px 0 100px;
-        }
-        
-        /* 탭 메뉴 스타일 */
-        .solution-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-button {
-            padding: 12px 20px;
-            background-color: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button:hover, .tab-button.active {
-            background-color: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        
-        /* 탭 콘텐츠 스타일 */
-        .tab-content {
-            display: none;
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .solution-detail-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .solution-detail-icon {
-            font-size: 48px;
-            margin-right: 20px;
-        }
-        
-        .solution-detail-intro h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .solution-detail-intro p {
-            color: var(--text-light);
-            font-size: 16px;
-        }
-        
-        /* 프로덕트 고도화 탭 스타일 */
-        .solution-funnel {
-            margin: 40px 0;
-        }
-        
-        .funnel-step {
-            display: flex;
-            margin-bottom: 30px;
-            border-left: 3px solid var(--primary);
-            padding-left: 30px;
-        }
-        
-        .step-label {
-            min-width: 80px;
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 18px;
-        }
-        
-        .step-content {
-            flex: 1;
-        }
-        
-        .step-content h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .step-content p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        
-        .step-image {
-            margin-top: 15px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .step-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        
-        .feature-item {
-            padding: 20px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background-color: #f9fafc;
-        }
-        
-        .feature-item h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .feature-item p {
-            font-size: 14px;
-        }
-        
-        /* 그로스 & 세일즈 탭 스타일 */
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .strategy-card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .strategy-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-        
-        .strategy-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-        
-        .strategy-content h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .strategy-list {
-            list-style: none;
-            margin-bottom: 15px;
-        }
-        
-        .strategy-list li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border);
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .strategy-list li:before {
-            content: "•";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-        }
-        
-        .strategy-desc {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        
-        /* 데이터 기반 의사결정 탭 스타일 */
-        .tools-table {
-            margin: 30px 0;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .tools-table-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-        }
-        
-        .tools-table-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .tools-table-row:last-child {
-            border-bottom: none;
-        }
-        
-        .table-col {
-            padding: 15px;
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .table-col:last-child {
-            border-right: none;
-        }
-        
-        .ai-solutions {
-            margin-top: 40px;
-        }
-        
-        .ai-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .ai-feature {
-            display: flex;
-            background-color: #f9fafc;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .ai-feature-icon {
-            font-size: 24px;
-            margin-right: 15px;
-        }
-        
-        .ai-feature-content h5 {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .ai-feature-content p {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-        
-        /* 기술 인프라 탭 스타일 */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .tech-card {
-            padding: 30px;
-            border-radius: 8px;
-            background-color: #f9fafc;
-            transition: all 0.3s ease;
-        }
-        
-        .tech-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-        
-        .tech-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-        
-        .tech-card h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .tech-card p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        
-        .tech-benefits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .tech-benefits span {
-            background-color: rgba(29, 111, 242, 0.1);
-            color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        /* 공통 CTA 스타일 */
-        .solution-cta {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        @media (max-width: 992px) {
-            .feature-grid,
-            .strategy-grid,
-            .ai-features {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .tools-table-header,
-            .tools-table-row {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .tools-table-header .table-col:nth-child(3),
-            .tools-table-row .table-col:nth-child(3) {
-                grid-column: span 2;
-                border-top: 1px solid var(--border);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .feature-grid,
-            .strategy-grid,
-            .ai-features,
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tab-content {
-                padding: 20px;
-            }
-            
-            .solution-detail-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .solution-detail-icon {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
-    
-    <!-- 탭 동작을 위한 자바스크립트 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 탭 기능 구현
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // 모든 탭 버튼에서 active 클래스 제거
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // 현재 클릭한 버튼에 active 클래스 추가
-                    this.classList.add('active');
-                    
-                    // 모든 탭 콘텐츠 숨기기
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    // 선택한 탭 콘텐츠 표시
-                    const tabId = this.getAttribute('data-tab') + '-tab';
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
-    </script>
-
     <!-- 왜 위시켓인가 섹션 -->
     <section class="why-wishket">
         <div class="container">
@@ -1628,22 +854,35 @@
         </div>
     </footer>
 
-    <!-- 자바스크립트 -->
+    <!-- 통합 자바스크립트 -->
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
         // 모바일 메뉴 토글
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.add('active');
-            document.querySelector('.overlay').classList.add('active');
-        });
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const menuClose = document.querySelector('.mobile-menu-close');
+        const overlay = document.querySelector('.overlay');
         
-        document.querySelector('.mobile-menu-close').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
-        });
+        [menuToggle, menuClose, overlay].forEach(el => el.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            overlay.classList.toggle('show');
+        }));
         
-        document.querySelector('.overlay').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
+        // 탭 전환 기능
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(btn => btn.addEventListener('click', () => {
+            const targetId = btn.dataset.tab + '-tab';
+            tabButtons.forEach(b => b.classList.toggle('active', b === btn));
+            tabContents.forEach(c => c.classList.toggle('active', c.id === targetId));
+        }));
+        
+        // 데이터 탭의 카테고리 아코디언 기능
+        document.querySelectorAll('.data-category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('active');
+            });
         });
         
         // 스크롤 헤더 효과
@@ -1654,6 +893,7 @@
                 document.querySelector('header').style.boxShadow = 'none';
             }
         });
+    });
     </script>
 </body>
 </html>
