@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위시켓 Growth Partner | 마켓플레이스/플랫폼 비즈니스 성장 컨설팅</title>
+    <meta name="description" content="위시켓의 Growth Partner 서비스로 마켓플레이스/플랫폼 비즈니스의 생존을 넘어 지속 가능한 성장을 이루세요.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 스타일 설정 */
+        :root {
+            --primary: #1D6FF2;
+            --primary-dark: #0D5ADF;
+            --secondary: #FF5722;
+            --text: #333333;
+            --text-light: #666666;
+            --light-bg: #F8F9FA;
+            --border: #E1E4E8;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo img {
+            height: 36px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* 히어로 섹션 */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(120deg, #1D6FF2, #3F8FFF);
+            color: var(--white);
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            margin-top: 40px;
+        }
+        
+        .btn-large {
+            padding: 14px 30px;
+            font-size: 18px;
+        }
+        
+        /* 섹션 공통 스타일 */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 니즈 섹션 */
+        .needs {
+            background-color: var(--light-bg);
+        }
+        
+        .needs-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .need-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .need-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .need-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .need-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .need-text {
+            color: var(--text-light);
+        }
+        
+        /* 솔루션 섹션 */
+        .solutions {
+            background-color: var(--white);
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .solution-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .solution-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .solution-tag {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background-color: var(--secondary);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        
+        .solution-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .solution-features {
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            min-width: 20px;
+            font-weight: bold;
+        }
+        
+        /* 왜 위시켓인가 섹션 */
+        .why-wishket {
+            background-color: var(--light-bg);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .value-card {
+            background-color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .value-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .value-text {
+            color: var(--text-light);
+        }
+        
+        /* CTA 섹션 */
+        .cta {
+            background: linear-gradient(120deg, #1D6FF2, #3F8FFF);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary);
+            border: none;
+        }
+        
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* 푸터 스타일 */
+        footer {
+            background-color: var(--text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-text {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* 반응형 스타일 */
+        @media (max-width: 992px) {
+            .header-container {
+                height: 70px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .needs-grid, .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu, .header-buttons {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+        
+        /* 모바일 메뉴 */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: all 0.3s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-close {
+            text-align: right;
+            font-size: 24px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-links li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-menu-links a {
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="https://www.wishket.com/">
+                    <img src="images/Wihsket_logoX2.png" alt="위시켓 로고">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">서비스 소개</a></li>
+                <li><a href="#" class="nav-link">성장 사례</a></li>
+                <li><a href="#" class="nav-link">컨설팅 프로세스</a></li>
+                <li><a href="#" class="nav-link">팀 소개</a></li>
+                <li><a href="#" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="header-buttons">
+                <a href="#" class="btn btn-outline">로그인</a>
+                <a href="#" class="btn btn-primary">상담 신청</a>
+            </div>
+            <div class="mobile-menu-toggle">≡</div>
+        </div>
+    </header>
+    
+    <!-- 모바일 메뉴 -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">✕</div>
+        <ul class="mobile-menu-links">
+            <li><a href="#">서비스 소개</a></li>
+            <li><a href="#">성장 사례</a></li>
+            <li><a href="#">컨설팅 프로세스</a></li>
+            <li><a href="#">팀 소개</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#" class="btn btn-primary" style="display: inline-block;">상담 신청</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+    
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">중개 플랫폼 비즈니스의 정답.<br>위시켓과 함께 생존을 넘어<br>독보적으로 성장하세요</h1>
+                <p class="hero-subtitle">위시켓은 중개 플랫폼의 성장 단계에 맞춤화된 그로스 & 테크 컨설팅 및<br> 운영 서비스를 제공, 성장 엔진이 멈추지 않게 지원합니다.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary btn-large">무료 상담 신청하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 니즈 섹션 -->
+    <section class="needs">
+        <div class="container">
+            <h2 class="section-title">이런 고민이 있으신가요?</h2>
+            <p class="section-subtitle">플랫폼 비즈니스를 운영하면서 마주하게 되는 주요 도전과제</p>
+            
+            <div class="needs-grid" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="need-card">
+                    <div class="need-icon">📉</div>
+                    <h3 class="need-title">유저 확보 비용 증가</h3>
+                    <p class="need-text">광고 효율이 떨어지고 신규 유저 확보 비용이 지속적으로 상승하여 성장에 제약이 생기고 있습니다.</p>
+                </div>
+                
+                <div class="need-card">
+                    <div class="need-icon">👥</div>
+                    <h3 class="need-title">유저 이탈률 증가</h3>
+                    <p class="need-text">신규 유저의 리텐션이 낮아 획득한 유저의 가치를 최대화하지 못하고 있습니다.</p>
+                </div>
+                
+                <div class="need-card">
+                    <div class="need-icon">🛑</div>
+                    <h3 class="need-title">성장 정체</h3>
+                    <p class="need-text">초기 성장 이후 매출과 거래액 성장이 정체되어 새로운 성장 동력이 필요합니다.</p>
+                </div>
+                
+                <div class="need-card">
+                    <div class="need-icon">🔍</div>
+                    <h3 class="need-title">데이터 분석 어려움</h3>
+                    <p class="need-text">데이터는 쌓이고 있지만 의미 있는 인사이트를 도출하고 액션으로 연결하는 데 어려움이 있습니다.</p>
+                </div>
+                
+                <div class="need-card">
+                    <div class="need-icon">💼</div>
+                    <h3 class="need-title">운영 비용 증가</h3>
+                    <p class="need-text">비효율적인 운영으로 인해 비용이 증가하고 있습니다. 이를 최적화할 필요가 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 솔루션 섹션 -->
+    <section class="solutions">
+        <div class="container">
+            <h2 class="section-title">위시켓 Growth Partner가<br>제공하는 솔루션</h2>
+            <p class="section-subtitle">마켓플레이스 운영 경험과 기술 전문성을 바탕으로 실질적인 성장을 지원합니다</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <span class="solution-tag">CORE</span>
+                    <h3 class="solution-title">프로덕트 개선</h3>
+                    <p>유저 온보딩부터 리텐션까지, 마켓플레이스 핵심 지표 개선을 위한 프로덕트 분석 및 최적화</p>
+                    <ul class="solution-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>유저 여정 맵 분석 및 UX 개선</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>핵심 전환율 개선을 위한 A/B 테스트 설계</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>마켓플레이스 PMF 검증 및 최적화</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="solution-card">
+                    <span class="solution-tag">GROWTH</span>
+                    <h3 class="solution-title">그로스 자동화</h3>
+                    <p>반복적인 마케팅 및 운영 업무를 자동화하여 효율적인 확장을 지원</p>
+                    <ul class="solution-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>유저 세그먼트별 자동화된 커뮤니케이션 설계</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>유저 활성화 및 리인게이지먼트 자동화</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>운영 효율화를 위한 워크플로우 자동화</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">데이터 시스템</h3>
+                    <p>의사결정을 위한 데이터 시스템 구축 및 핵심 지표 대시보드 개발</p>
+                    <ul class="solution-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>마켓플레이스 핵심 지표 설계 및 대시보드 구축</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>데이터 파이프라인 및 분석 인프라 구축</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>실시간 데이터 모니터링 시스템 개발</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="solution-title">기술 인프라</h3>
+                    <p>확장 가능한 시스템 설계 및 기술 아키텍처 개선</p>
+                    <ul class="solution-features">
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>마켓플레이스 확장성을 고려한 인프라 설계</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>성능 최적화 및 부하 테스트</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>개발 프로세스 개선 및 기술 역량 강화</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 왜 위시켓인가 섹션 -->
+    <section class="why-wishket">
+        <div class="container">
+            <h2 class="section-title">왜 위시켓 Growth Partner인가?</h2>
+            <p class="section-subtitle">직접 마켓플레이스를 성공시킨 팀이 여러분의 비즈니스 성장을 돕습니다</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">📊</div>
+                    <h3 class="value-title">검증된 경험</h3>
+                    <p class="value-text">10년 이상의 마켓플레이스 운영 경험과 5,000+ 프로젝트 중개 노하우를 기반으로 실질적인 해결책을 제시합니다.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3 class="value-title">종합적 접근</h3>
+                    <p class="value-text">그로스, 마케팅, 개발, 데이터 분야의 전문가들이 협업하여 종합적인 솔루션을 제공합니다.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3 class="value-title">실행 중심</h3>
+                    <p class="value-text">단순한 조언을 넘어 실행 가능한 액션 플랜과 즉각적인 실행을 지원합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA 섹션 -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">지금 바로 무료 상담을 신청하세요</h2>
+            <p class="cta-text">위시켓의 Growth Partner 팀이 귀사의 비즈니스 상황을 분석하고, 맞춤형 성장 전략을 제안해 드립니다.</p>
+            <a href="#" class="btn btn-white btn-large">무료 상담 신청하기</a>
+        </div>
+    </section>
+    
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/Wihsket_logoX2.png" alt="위시켓 로고">
+                    </div>
+                    <p class="footer-text">위시켓은 IT 외주 개발 및 상주 프리랜서를 연결하는 플랫폼으로, 이제는 마켓플레이스와 플랫폼 비즈니스의 성장을 위한 전문 컨설팅 서비스를 제공합니다.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>서비스</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">프리랜서 매칭</a></li>
+                        <li><a href="#">개발 외주</a></li>
+                        <li><a href="#">Growth Partner</a></li>
+                        <li><a href="#">기업 솔루션</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>회사</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">위시켓 블로그</a></li>
+                        <li><a href="#">채용 정보</a></li>
+                        <li><a href="#">언론 보도</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>문의</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">고객 지원</a></li>
+                        <li><a href="#">파트너십 문의</a></li>
+                        <li><a href="#">이용 약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 (주)위시켓. 모든 권리 보유.</div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">F</a>
+                    <a href="#" class="social-icon">I</a>
+                    <a href="#" class="social-icon">Y</a>
+                    <a href="#" class="social-icon">B</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트 -->
+    <script>
+        // 모바일 메뉴 토글
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.add('active');
+            document.querySelector('.overlay').classList.add('active');
+        });
+        
+        document.querySelector('.mobile-menu-close').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+        });
+        
+        document.querySelector('.overlay').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+        });
+        
+        // 스크롤 헤더 효과
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                document.querySelector('header').style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
