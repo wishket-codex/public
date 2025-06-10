@@ -1591,3 +1591,150 @@ html {
     --logo-height: 24px;
   }
 }
+
+/* ========== 기존 대안 비교 블록 스타일 ========== */
+.alternatives-block {
+    margin-top: 60px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.alternatives-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+}
+
+.alternatives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.alternative-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border);
+    height: 100%;
+}
+
+.alternative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+.alternative-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.alternative-icon {
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+.alternative-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+}
+
+.alternative-problems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.alternative-problems li {
+    margin-bottom: 15px;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.alternative-problems li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.alternative-problems li strong {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.highlight {
+    background-color: rgba(255, 225, 0, 0.3);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.solution-transition {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(59, 163, 199, 0.1);
+    border-radius: 8px;
+}
+
+.solution-transition p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.solution-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.solution-link:hover {
+    color: var(--primary-dark);
+}
+
+.solution-link .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.solution-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* 부드러운 스크롤 효과 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .alternatives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .alternatives-block {
+        padding: 30px 20px;
+    }
+    
+    .alternative-card {
+        padding: 20px;
+    }
+}
