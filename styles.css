@@ -909,6 +909,36 @@ footer {
   .tech-service-card {
     padding-bottom: 80px; /* 모바일에서 더 많은 공간 */
   }
+  
+  .timeline-header {
+    flex-direction: column;
+  }
+  
+  .timeline-label-container {
+    justify-content: space-around;
+  }
+  
+  .track-label {
+    width: 120px;
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .timeline-weeks-container {
+    margin: 15px 0;
+  }
+  
+  .timeline-weeks {
+    margin: 0 10px;
+  }
+  
+  .connection-points {
+    height: 80px;
+  }
+  
+  .module-block {
+    padding: 12px;
+  }
 }
 
 .data-section-content {
