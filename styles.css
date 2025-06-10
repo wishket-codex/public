@@ -1656,7 +1656,7 @@ html {
 }
 
 .alternative-problems li {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     padding-left: 24px;
     position: relative;
     line-height: 1.5;
@@ -1672,8 +1672,17 @@ html {
 }
 
 .alternative-problems li strong {
+    display: block;
     color: var(--primary-dark);
     font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.alternative-problems li p {
+    margin: 0;
+    line-height: 1.5;
+    color: #555;
 }
 
 .highlight {
