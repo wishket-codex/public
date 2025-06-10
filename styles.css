@@ -419,7 +419,7 @@ footer {
 }
 
 .footer-logo img { height: 30px; margin-bottom: 20px; }
-.footer-text    { line-height: 1.6; margin-bottom: 20px; }
+.footer-text    { color: var(--white); line-height: 1.6; margin-bottom: 20px; }
 .footer-col h4  { color: var(--white); margin-bottom: 20px; font-size: 18px; font-weight: 600; }
 
 .footer-links li { margin-bottom: 10px; }
@@ -565,7 +565,6 @@ footer {
     padding:2px 6px;
     border-radius:10px;
     display: inline-block;
-    width: fit-content;
 }
 
 /* 칩 컨테이너 스타일 - 칩이 가로로 배치되도록 설정 */
@@ -1745,5 +1744,138 @@ html {
     
     .alternative-card {
         padding: 20px;
+    }
+}
+
+/* FAQ 섹션 스타일 */
+.faq {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
+.faq .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(59, 163, 199, 0.05);
+}
+
+.faq-question h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    padding-right: 40px;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.faq-toggle .icon-plus,
+.faq-toggle .icon-minus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: 0.3s ease;
+}
+
+.faq-toggle .icon-minus {
+    opacity: 0;
+}
+
+.faq-item.active .faq-toggle .icon-plus {
+    opacity: 0;
+}
+
+.faq-item.active .faq-toggle .icon-minus {
+    opacity: 1;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: 0 20px 20px;
+}
+
+.faq-answer p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 채팅 CTA */
+.chat-cta {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #f0f7fa;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(59, 163, 199, 0.1);
+}
+
+.chat-cta p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--primary-dark);
+}
+
+.chat-cta .btn {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .faq-question h3 {
+        font-size: 16px;
+    }
+    
+    .faq-container {
+        padding: 0 15px;
     }
 }
