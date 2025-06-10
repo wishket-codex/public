@@ -538,13 +538,76 @@ footer {
 #growth-tab .funnel-group{background:#f9fafc;border:1px solid var(--border);border-radius:8px;padding:30px;}
 #growth-tab .funnel-title{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:25px;}
 #growth-tab .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-#growth-tab .service-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;transition:.25s;}
+#growth-tab .service-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:18px 20px 50px; /* 하단 패딩 증가 */
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:.25s;
+  position: relative; /* 명시적 position 설정 */
+  min-height: 135px; /* 최소 높이 설정 */
+}
 #growth-tab .service-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
-#growth-tab .service-name{font-size:15px;font-weight:500;line-height:1.4;color:var(--text);}
-#growth-tab .service-tag{align-self:flex-start;padding:2px 10px;border-radius:16px;font-size:12px;font-weight:600;letter-spacing:-.2px;}
-#growth-tab .service-tag.growth{background:#e8f3ff;color:var(--primary);}
-#growth-tab .service-tag.sales {background:#fff4e5;color:var(--secondary);}
-@media(max-width:768px){#growth-tab .service-grid{grid-template-columns:1fr;}}
+#growth-tab .service-name{font-size:15px;font-weight:600;line-height:1.4;color:var(--primary-dark);margin-bottom: 4px;}
+#growth-tab .service-desc{font-size:13px;color:var(--text-light);margin:0 0 10px 0;line-height:1.5;}
+#growth-tab .service-tag{
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -.2px;
+}
+
+#growth-tab .service-tag.growth {
+  background: #e8f3ff;
+  color: var(--primary);
+}
+
+#growth-tab .service-tag.sales {
+  background: #fff4e5;
+  color: var(--secondary);
+}
+
+/* 반응형 디자인 개선 */
+@media (max-width: 768px) {
+  #growth-tab .service-card {
+    min-height: auto;
+    padding-bottom: 45px;
+  }
+}
+
+/* 그로스 & 세일즈 탭 태그 개선 */
+#growth-tab .service-card {
+  min-height: 140px !important; /* 최소 높이 강제 설정 */
+  padding-bottom: 50px !important; /* 하단 패딩 더 늘림 */
+  position: relative !important; /* 포지션 설정 확실하게 */
+}
+
+#growth-tab .service-desc {
+  margin-bottom: 15px !important; /* 설명과 태그 사이 간격 확보 */
+  line-height: 1.4 !important;
+}
+
+#growth-tab .service-tag {
+  position: absolute !important;
+  bottom: 15px !important; /* 하단에 고정 */
+  left: 20px !important;
+  z-index: 2 !important; /* 다른 요소 위에 표시되도록 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important; /* 약간의 그림자 추가 */
+}
+
+@media (max-width: 768px) {
+  #growth-tab .service-card {
+    min-height: 170px !important; /* 모바일에서는 더 높게 */
+  }
+}
 
 /* ===== Data Tab Specific ===== */
 .data-category{
@@ -597,6 +660,153 @@ footer {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+}
+
+/* ===== 기술 인프라 탭 스타일 ===== */
+/* 기술 아이콘 컨테이너와 아이콘 */
+.tech-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.tech-icon {
+  font-size: 28px;
+}
+
+.tech-icon.large {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+/* 기술 서비스 카드 */
+.tech-service-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 65px; /* 서비스 메타를 위한 하단 패딩 */
+}
+
+/* 기술 서비스 카드의 서비스 메타 위치 고정 */
+.tech-service-card .service-meta {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+/* 기술 도구 태그 */
+.tech-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tech-tool-tag {
+  background-color: rgba(10, 34, 63, 0.08);
+  color: var(--primary-dark);
+  border: 1px solid rgba(10, 34, 63, 0.2);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* 기술 이점 */
+.tech-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-benefits span {
+  background-color: rgba(59, 163, 199, 0.1);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* 기술 스택 시각화 */
+.tech-stack-visualization {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: #f9fafc;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.stack-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.stack-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stack-layer {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.layer-label {
+  width: 120px;
+  padding: 15px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.layer-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  flex: 1;
+}
+
+.stack-item {
+  background-color: rgba(59, 163, 199, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary-dark);
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .stack-layer {
+    flex-direction: column;
+  }
+  
+  .layer-label {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .tech-service-card {
+    padding-bottom: 80px; /* 모바일에서 더 많은 공간 */
+  }
 }
 
 .data-section-content {
