@@ -3,30 +3,40 @@ function initMainScripts() {
     // 모바일 메뉴 토글
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
-    const menuClose = document.querySelector('.mobile-menu-close');
     const overlay = document.querySelector('.overlay');
     
     console.log('Mobile menu elements:', {
         menuToggle,
         mobileMenu, 
-        menuClose,
         overlay
     });
     
-    if (menuToggle && mobileMenu && menuClose && overlay) {
+    if (menuToggle && mobileMenu && overlay) {
         console.log('All mobile menu elements found, adding event listeners');
         
-        [menuToggle, menuClose, overlay].forEach(el => {
+        [menuToggle, overlay].forEach(el => {
             el.addEventListener('click', (e) => {
                 console.log('Mobile menu element clicked:', el);
                 e.preventDefault();
                 
-                mobileMenu.classList.toggle('open');
-                overlay.classList.toggle('show');
+                const isOpen = mobileMenu.classList.contains('open');
+                
+                if (el === menuToggle) {
+                    // 메뉴 토글 클릭 시
+                    mobileMenu.classList.toggle('open');
+                    overlay.classList.toggle('show');
+                    menuToggle.classList.toggle('active');
+                } else {
+                    // 오버레이 클릭 시
+                    mobileMenu.classList.remove('open');
+                    overlay.classList.remove('show');
+                    menuToggle.classList.remove('active');
+                }
                 
                 console.log('Mobile menu state:', {
                     isOpen: mobileMenu.classList.contains('open'),
-                    overlayVisible: overlay.classList.contains('show')
+                    overlayVisible: overlay.classList.contains('show'),
+                    toggleActive: menuToggle.classList.contains('active')
                 });
             });
         });
@@ -43,27 +53,17 @@ function initMainScripts() {
                 
                 const mobileMenu = document.querySelector('.mobile-menu');
                 const overlay = document.querySelector('.overlay');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
                 
-                if (mobileMenu && overlay) {
+                if (mobileMenu && overlay && menuToggle) {
                     mobileMenu.classList.toggle('open');
                     overlay.classList.toggle('show');
+                    menuToggle.classList.toggle('active');
                     console.log('Mobile menu toggled via delegation');
                 }
             }
             
-            if (e.target.closest('.mobile-menu-close')) {
-                console.log('Mobile menu close clicked via delegation');
-                e.preventDefault();
-                
-                const mobileMenu = document.querySelector('.mobile-menu');
-                const overlay = document.querySelector('.overlay');
-                
-                if (mobileMenu && overlay) {
-                    mobileMenu.classList.remove('open');
-                    overlay.classList.remove('show');
-                    console.log('Mobile menu closed via delegation');
-                }
-            }
+
             
             if (e.target.closest('.overlay')) {
                 console.log('Overlay clicked via delegation');
@@ -71,10 +71,12 @@ function initMainScripts() {
                 
                 const mobileMenu = document.querySelector('.mobile-menu');
                 const overlay = document.querySelector('.overlay');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
                 
-                if (mobileMenu && overlay) {
+                if (mobileMenu && overlay && menuToggle) {
                     mobileMenu.classList.remove('open');
                     overlay.classList.remove('show');
+                    menuToggle.classList.remove('active');
                     console.log('Mobile menu closed via overlay click');
                 }
             }
@@ -87,13 +89,11 @@ function initMainScripts() {
     setTimeout(() => {
         const menuToggleRetry = document.querySelector('.mobile-menu-toggle');
         const mobileMenuRetry = document.querySelector('.mobile-menu');
-        const menuCloseRetry = document.querySelector('.mobile-menu-close');
         const overlayRetry = document.querySelector('.overlay');
         
         console.log('Mobile menu elements after timeout:', {
             menuToggle: menuToggleRetry,
             mobileMenu: mobileMenuRetry,
-            menuClose: menuCloseRetry,
             overlay: overlayRetry
         });
         
@@ -107,6 +107,7 @@ function initMainScripts() {
                 if (mobileMenuRetry && overlayRetry) {
                     mobileMenuRetry.classList.toggle('open');
                     overlayRetry.classList.toggle('show');
+                    menuToggleRetry.classList.toggle('active');
                     console.log('Mobile menu toggled directly');
                 }
             });
