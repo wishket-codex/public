@@ -270,6 +270,9 @@ header {
     margin-bottom: 30px;
     font-weight: 400;
     opacity: 0.9;
+    max-width: 600px;
+    word-break: keep-all;
+    word-wrap: balance;
 }
 
 .hero-cta { 
@@ -290,6 +293,8 @@ section {
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
+    word-break: keep-all;
+    word-wrap: balance;
 }
 
 .section-subtitle {
@@ -297,9 +302,11 @@ section {
     color: var(--text-light);
     text-align: center;
     margin-bottom: 50px;
-    max-width: 800px;
+    max-width: 710px;
     margin-left: auto;
     margin-right: auto;
+    word-break: keep-all;
+    word-wrap: balance;
 }
 
 /* ========== Needs ========= */
@@ -640,6 +647,42 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .feature-grid,
+    .strategy-grid,
+    .ai-features,
+    .needs-grid,
+    .solutions-grid,
+    .tool-grid,
+    .ai-cards-container,
+    .alternatives-grid { 
+        grid-template-columns: repeat(1, 1fr) !important; 
+    }
+
+    .tools-table-header,
+    .tools-table-row { 
+        grid-template-columns: 1fr !important; 
+    }
+
+    .tools-table-header .table-col:nth-child(3),
+    .tools-table-row .table-col:nth-child(3) {
+        grid-column: span 1 !important;
+        border-top: none !important;
+    }
+
+    /* data-section-index의 자식 요소들을 세로 정렬 */
+    .index-links {
+        flex-direction: column !important;
+        gap: 12px !important;
+        justify-content: flex-start !important;
+    }
+
+    .index-link {
+        flex: none !important;
+        width: 100% !important;
+    }
+}
+
 @media (max-width: 768px) {
     .feature-grid,
     .strategy-grid,
@@ -706,6 +749,10 @@ footer {
 .funnel-group  { margin-bottom: 60px; }
 .funnel-label  { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
 .service-grid  { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; }
+
+@media (max-width: 480px) {
+    .service-grid { grid-template-columns: repeat(1, 1fr) !important; }
+}
 .service-card  { background:#fff; border:1px solid var(--border); border-radius:8px; padding:20px; transition:all .3s ease; }
 .service-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,.08); transform:translateY(-4px); }
 .service-title { font-size:16px; font-weight:600; margin-bottom:8px; color: var(--text); }
@@ -721,6 +768,10 @@ footer {
 #growth-tab .funnel-group{background:#f9fafc;border:1px solid var(--border);border-radius:8px;padding:30px;}
 #growth-tab .funnel-title{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:25px;}
 #growth-tab .service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+
+@media (max-width: 480px) {
+    #growth-tab .service-grid { grid-template-columns: repeat(1, 1fr) !important; }
+}
 #growth-tab .service-card{
   background:#fff;
   border:1px solid var(--border);
@@ -1130,7 +1181,7 @@ footer {
     font-size: 20px;
     margin-right: 1rem;
     position: absolute;
-    left: -20px;
+    left: -35px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     z-index: 2;
@@ -1672,6 +1723,8 @@ html {
   font-size: 1.125rem;        /* subtitle-2-bold */
   color: #0E1B29;             /* text900 */
   text-align: center;
+  word-break: keep-all;
+  word-wrap: balance;
 }
 
 /* 트랙 래퍼 */

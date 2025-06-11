@@ -506,6 +506,8 @@
   .members-heading {
     font-size: 20px;
     margin-bottom: 25px;
+    word-break: keep-all;
+    word-wrap: balance;
   }
   
   .team-network-grid {
@@ -568,5 +570,11 @@
   .btn-team-cta {
     padding: 12px 25px;
     font-size: 16px;
+  }
+
+  /* 모든 grid를 1열로 강제 설정 */
+  .team-members-grid,
+  .team-network-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 }

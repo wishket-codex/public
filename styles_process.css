@@ -286,6 +286,8 @@
 .process-cta {
   text-align: center;
   margin-top: 60px;
+  word-break: keep-all;
+  word-wrap: balance;
 }
 
 .process-cta .btn {
@@ -453,5 +455,25 @@
   
   .benefit p {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 모든 grid를 1열로 강제 설정 */
+  .timeline-header, 
+  .timeline-row {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  
+  .process-benefits {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .deliverables-cell, 
+  .involvement-cell {
+    display: block !important;
+    padding: 8px !important;
+    font-size: 12px !important;
   }
 }
