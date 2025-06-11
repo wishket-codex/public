@@ -19,10 +19,13 @@
   margin: 0 8px;
   font-size: 16px;
   font-weight: 500;
+  height: 46px;
   color: #666;
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .process-tab:after {
@@ -87,11 +90,11 @@
 }
 
 .main-track {
-  border-top: 4px solid #4285f4;
+  border-top: 4px solid var(--primary);
 }
 
 .foundation-track {
-  border-top: 4px solid #34a853;
+  border-top: 4px solid #7B8794;
 }
 
 .track-timeline {
@@ -130,13 +133,13 @@
 }
 
 .main-track .module {
-  border-left: 4px solid #4285f4;
-  border-bottom: 3px solid #4285f4;
+  border-left: 4px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
 }
 
 .foundation-track .module {
-  border-left: 4px solid #34a853;
-  border-bottom: 3px solid #34a853;
+  border-left: 4px solid #7B8794;
+  border-bottom: 3px solid #7B8794;
 }
 
 .module:before {
@@ -152,11 +155,11 @@
 }
 
 .main-track .module:before {
-  background: #4285f4;
+  background: var(--primary);
 }
 
 .foundation-track .module:before {
-  background: #34a853;
+  background: #7B8794;
 }
 
 .module:hover {
@@ -283,6 +286,13 @@
 .process-cta {
   text-align: center;
   margin-top: 60px;
+}
+
+.process-cta .btn {
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .process-cta p {

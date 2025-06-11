@@ -136,12 +136,17 @@ header {
 /* ========== Buttons ========== */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 500;
+    padding: 15px 25px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: 600;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-outline {
@@ -160,15 +165,16 @@ header {
 
 .btn-primary:hover { background-color: var(--primary-dark); }
 
-.btn-large { padding: 14px 30px; font-size: 18px; }
+.btn-large { padding: 18px 32px; font-size: 18px; height: 60px; }
 
 /* 추가 버튼 스타일 */
 /* 1. 라이트 프라이머리 */
 .btn-consult {
-  background:#3ba3c7;
-  color:#FFFFFF;
+  background:#FFFFFF;
+  color:#3ba3c7;
   border:none;
   box-shadow: 0 4px 10px rgba(59, 163, 199, 0.3);
+  height: 50px;
 }
 
 .btn-consult:hover {
@@ -182,6 +188,7 @@ header {
   color:#FFFFFF;
   border:1px solid #FFFFFF;
   backdrop-filter: blur(4px);
+  height: 50px;
 }
 
 .btn-consult--ghost:hover {
@@ -195,6 +202,7 @@ header {
   color:#FFFFFF;
   border:none;
   box-shadow: 0 4px 10px rgba(10, 34, 63, 0.3);
+  height: 50px;
 }
 
 .btn-consult--secondary:hover {
@@ -204,7 +212,7 @@ header {
 
 /* ========== Hero Section ========== */
 .hero {
-    padding: 140px 0 80px;
+    padding: 160px 0 100px;
     background: linear-gradient(120deg, #3ba3c7, #0a223f);
     color: var(--white);
 }
@@ -347,12 +355,16 @@ section { padding: 80px 0; }
 
 .tab-button {
     padding: 12px 20px;
+    height: 46px;
     background-color: var(--white);
     border: 1px solid var(--border);
     border-radius: 30px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tab-button:hover,
@@ -374,7 +386,7 @@ section { padding: 80px 0; }
 
 .solution-detail-header { display: flex; align-items: center; margin-bottom: 30px; }
 .solution-detail-icon  { font-size: 48px; margin-right: 20px; }
-.solution-detail-intro h3 { font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
+.solution-detail-intro h3 { font-size: 24px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
 .solution-detail-intro p  { color: var(--text-light); font-size: 16px; }
 
 /* ========== Common CTA ========= */
@@ -396,6 +408,7 @@ section { padding: 80px 0; }
     color: var(--primary);
     border: none;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    height: 50px;
 }
 
 .btn-white:hover { 
@@ -594,7 +607,7 @@ footer {
 .service-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,.08); transform:translateY(-4px); }
 .service-title { font-size:16px; font-weight:600; margin-bottom:8px; color: var(--text); }
 .service-desc  { font-size:14px; color: var(--text-light); margin-bottom:16px; }
-.service-meta  { display:flex; justify-content:space-between; font-size:13px; font-weight:500; }
+.service-meta  { display:flex; justify-content:space-between; font-size:16px; font-weight:500; }
 .service-price { color: var(--secondary); }
 .service-duration { color: var(--text-light); }
 
@@ -1379,11 +1392,14 @@ html {
 
 .btn-ai-demo {
   background: linear-gradient(90deg, #1D6FF2 0%, #4F46E5 100%);
+  height: 50px;
   color: white;
   font-weight: 600;
   padding: 12px 28px;
   border-radius: 8px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   transition: transform 0.2s ease;
   box-shadow: 0 4px 12px rgba(29, 111, 242, 0.2);
@@ -1580,8 +1596,8 @@ html {
   width: auto;
   flex-shrink: 0;
   object-fit: contain;
-  filter: grayscale(100%);   /* 필요 없으면 제거 */
-  opacity: 0.8;              /* 살짝 톤다운 */
+  filter: grayscale(0%);   /* 필요 없으면 제거 */
+  opacity: 1;              /* 살짝 톤다운 */
   transition: filter 0.3s, opacity 0.3s;
 }
 .tb-track img:hover {
@@ -1721,41 +1737,6 @@ html {
     font-weight: 600;
 }
 
-.solution-transition {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: rgba(59, 163, 199, 0.1);
-    border-radius: 8px;
-}
-
-.solution-transition p {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--primary-dark);
-    margin: 0;
-}
-
-.solution-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 5px;
-    transition: all 0.3s ease;
-}
-
-.solution-link:hover {
-    color: var(--primary-dark);
-}
-
-.solution-link .arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.solution-link:hover .arrow {
-    transform: translateX(5px);
-}
 
 /* 부드러운 스크롤 효과 */
 html {
@@ -1897,7 +1878,10 @@ html {
 }
 
 .chat-cta .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
 }
 
 @media (max-width: 768px) {
