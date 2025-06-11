@@ -173,13 +173,13 @@ header {
   background:#FFFFFF;
   color:#3ba3c7;
   border:none;
-  box-shadow: 0 4px 10px rgba(59, 163, 199, 0.3);
+  box-shadow: 0 4px 10px rgba(59,163,199,0.3);
   height: 50px;
 }
 
 .btn-consult:hover {
   background:#3590b1;
-  box-shadow: 0 6px 12px rgba(59, 163, 199, 0.4);
+  box-shadow: 0 6px 12px rgba(59,163,199,0.4);
 }
 
 /* 2. 고스트(투명) */
@@ -201,13 +201,13 @@ header {
   background:#0a223f;
   color:#FFFFFF;
   border:none;
-  box-shadow: 0 4px 10px rgba(10, 34, 63, 0.3);
+  box-shadow: 0 4px 10px rgba(10,34,63,0.3);
   height: 50px;
 }
 
 .btn-consult--secondary:hover {
   background:#0d2d53;
-  box-shadow: 0 6px 12px rgba(10, 34, 63, 0.4);
+  box-shadow: 0 6px 12px rgba(10,34,63,0.4);
 }
 
 /* ========== Hero Section ========== */
@@ -243,7 +243,10 @@ header {
 }
 
 /* ========== Section Utilities ========== */
-section { padding: 80px 0; }
+section { 
+    padding: 80px 0; 
+    scroll-margin-top: 80px; /* Added to prevent header overlap when scrolling to sections */
+}
 
 .section-title {
     font-size: 36px;
@@ -1525,11 +1528,6 @@ html {
   border-radius: 50%;
   font-size: 12px;
   font-weight: bold;
-}
-
-.step-name {
-  font-size: 0.85em;
-  font-weight: 500;
 }
 
 /* Responsive adjustments */

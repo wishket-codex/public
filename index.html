@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_process.css">
     <link rel="stylesheet" href="styles_team.css">
+    <link rel="stylesheet" href="styles_pricing.css">    
+
     <!-- 기본 파비콘 -->
     <link rel="icon" href="https://www.wishket.com/static/favicon.ico" type="image/x-icon">    <!-- iOS 디바이스용 아이콘 -->
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
@@ -19,13 +21,13 @@
     <!-- 헤더 -->
     <header>
         <div class="container header-container">        <div class="logo">
-                <a href="https://www.wishket.com/">
+                <a href="#">
                     <img src="static/img/wishket_logo.svg" alt="위시켓 로고">
                 </a>
-            </div><nav class="header-nav">
-                <ul class="nav-menu">                    <li><a href="#services" class="nav-link services-link">서비스 소개</a></li>
+            </div><nav class="header-nav">                <ul class="nav-menu">                    <li><a href="#services" class="nav-link services-link">서비스 소개</a></li>
                     <li><a href="#" class="nav-link">컨설팅 프로세스</a></li>
                     <li><a href="#team" class="nav-link team-link">팀 소개</a></li>
+                    <li><a href="#plan" class="nav-link plan-link">플랜/가격</a></li>
                     <li><a href="#faq" class="nav-link faq-link">FAQ</a></li>
                 </ul>
             </nav>
@@ -40,11 +42,11 @@
     </header>
 
     <!-- 모바일 메뉴 -->
-    <div class="mobile-menu">        <div class="mobile-menu-close">✕</div>
-        <ul class="mobile-menu-links">            <li><a href="#services" class="mobile-services-link">서비스 소개</a></li>
+    <div class="mobile-menu">        <div class="mobile-menu-close">✕</div>        <ul class="mobile-menu-links">            <li><a href="#services" class="mobile-services-link">서비스 소개</a></li>
             <!-- <li><a href="#">성장 사례</a></li> -->
             <li><a href="#">컨설팅 프로세스</a></li>
             <li><a href="#team" class="mobile-team-link">팀 소개</a></li>
+            <li><a href="#plan" class="mobile-plan-link">플랜/가격</a></li>
             <li><a href="#faq" class="mobile-faq-link">FAQ</a></li>
             <li><a href="#">로그인</a></li>
             <li><a href="https://tally.so/r/3ypx5x" class="btn btn-primary" style="display: inline-block;">상담 신청</a></li>
@@ -1702,7 +1704,9 @@
                 <a href="https://tally.so/r/3ypx5x" class="btn btn-primary">컨설팅 문의하기</a>
             </div>
         </div>
-    </section>    <!-- 팀 소개 섹션 -->
+    </section>    
+    
+    <!-- 팀 소개 섹션 -->
     <section id="team" class="team-introduction">
         <div class="container">
             <!-- 섹션 헤드 -->
@@ -1857,7 +1861,7 @@
                             </div>
                             <div class="milestone" style="left: 70%; top: 5%;">
                                 <div class="milestone-dot"></div>
-                                <div class="milestone-text">AI 제품 주도</div>
+                                <div class="milestone-text">AI 제품 주도 그로스</div>
                             </div>
                             <div class="milestone" style="left: 90%; top: -2%;">
                                 <div class="milestone-dot"></div>
@@ -1888,6 +1892,223 @@
                     <h3>위시켓 그로스팀과 Kick-off 미팅 잡기</h3>
                     <p>30분 무료 컨설팅으로 현황 진단 & 기회 영역 맵핑</p>
                     <a href="https://tally.so/r/3ypx5x" class="btn btn-team-cta">전문가와 이야기하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 플랜/가격 섹션 -->    
+     <section id="plan" class="plan-price">
+        <div class="container">
+            <h2 class="section-title">성과 보장 풀스택 그로스팀 구독 & 내재화</h2>
+            <p class="section-subtitle">진단-실행-내재화까지 모듈형 과금으로 시작 부담을 없앴습니다.<br>예상 ROI를 먼저 확인하고 결정하세요.</p>
+            
+            <!-- 결제 방식 토글 추가 -->
+            <div class="section-price-toggle-container">
+                <div class="toggle-option active" id="monthlyToggle">월 결제</div>
+                <div class="toggle-option" id="lumpSumToggle">일괄 결제 <span class="save-badge">10% 할인</span></div>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- 1. Discovery Sprint -->
+                <div class="pricing-card">
+                    <div class="card-badge">6월 한정 5팀</div>
+                    <h3 class="plan-title">Discovery Sprint</h3>
+                    <p class="plan-subtitle">4주 진단·로드맵</p>
+                    <div class="plan-purpose">
+                        <div class="purpose-icon">🔍</div>
+                        <p>문제 정의 & ROI 계산<br>예산 결정 전 '가성비' 검증</p>
+                    </div>                    <!-- 월 결제 가격 정보 -->
+                    <div class="price-display monthly-price">
+                        <div class="plan-price">
+                            <span class="price-from">₩8</span>
+                            <span class="price-unit">백만</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 일괄 결제 가격 정보 -->
+                    <div class="price-display lump-sum-price hidden">
+                        <div class="plan-price">
+                            <span class="price-from">₩8</span>
+                            <span class="price-unit">백만</span>
+                        </div>
+                    </div>
+                    <div class="plan-note">후속 단계 계약 시 100% 상계</div>                    <ul class="plan-features">
+                        <li>NS-KPI & Heat-Map</li>
+                        <li>Quick-Win 3개 제안</li>
+                        <li>투자 대비 예상 리프트 시뮬레이션</li>
+                    </ul>
+                </div>                  <!-- 2. Growth Boost 12W -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">Growth Boost 12W</h3>
+                    <p class="plan-subtitle">메인 트랙 단독</p>
+                    <div class="plan-purpose">
+                        <div class="purpose-icon">⚡</div>
+                        <p>90일 집중 실행<br>빠른 개선·레시피 확보</p>
+                    </div>
+                    
+                    <!-- 월 결제 가격 정보 -->
+                    <div class="price-display monthly-price">
+                        <div class="plan-price">
+                            <span class="price-from">₩12</span>
+                            <span class="price-unit">백만</span>
+                            <span class="price-month">× 3개월</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 일괄 결제 가격 정보 -->
+                    <div class="price-display lump-sum-price hidden">
+                        <div class="plan-price">
+                            <span class="price-from">₩32.4</span>
+                            <span class="price-unit">백만</span>
+                        </div>
+                    </div>
+                    <div class="plan-note">ROI ≥ 1× 미달 시 환불</div>                    <ul class="plan-features">
+                        <li>Quick-Win 스프린트</li>
+                        <li>A/B 10건 & KPI 보고서</li>
+                        <li>실행 Playbook & 팀 코칭</li>
+                    </ul>
+                </div>
+                
+                <!-- 3. Dual Track Scale -->
+                <div class="pricing-card featured">
+                    <div class="card-badge featured-badge">인기</div>
+                    <h3 class="plan-title">Dual Track Scale</h3>
+                    <p class="plan-subtitle">메인 + Foundation</p>
+                    <div class="plan-purpose">
+                        <div class="purpose-icon">🚀</div>
+                        <p>성장 + 데이터/AI 체질화<br>재방문·CAC·LTV 동시 개선</p>
+                    </div>                    <!-- 월 결제 가격 정보 -->
+                    <div class="price-display monthly-price">
+                        <div class="plan-price">
+                            <span class="price-from">₩15</span>
+                            <span class="price-unit">백만</span>
+                            <span class="price-month">× 3개월</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 일괄 결제 가격 정보 -->
+                    <div class="price-display lump-sum-price hidden">
+                        <div class="plan-price">
+                            <span class="price-from">₩40.5</span>
+                            <span class="price-unit">백만</span>
+                        </div>
+                    </div>
+                    <div class="plan-note">ROI ≥ 3× 미달 시 환불</div>                    <ul class="plan-features">
+                        <li><strong>위 2단계 전체 내용 포함</strong></li>
+                        <li>Daily KPI Slack Bot</li>
+                        <li>AI Early-Warning 룰셋</li>
+                        <li>Behavior-CLV Segmentation</li>
+                    </ul>
+                </div>
+                
+                <!-- 4. On-Demand Modules -->
+                <div class="pricing-card">
+                    <h3 class="plan-title">On-Demand Modules</h3>
+                    <p class="plan-subtitle">모듈형 추가 옵션</p>
+                    <div class="plan-purpose">
+                        <div class="purpose-icon">🛠️</div>
+                        <p>특정 기능 스냅-온,<br>디지털 툴 도입 및 활용</p>
+                    </div>                    <!-- 월 결제 가격 정보 -->
+                    <div class="price-display monthly-price">
+                        <div class="plan-price">
+                            <span class="price-from">₩ ~</span>
+                            <span class="price-note">상담 필요</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 일괄 결제 가격 정보 -->
+                    <div class="price-display lump-sum-price hidden">
+                        <div class="plan-price">
+                            <span class="price-from">₩ ~</span>
+                            <span class="price-note">상담 필요</span>
+                        </div>
+                    </div>
+                    <div class="plan-note">서비스 소개 참고</div>                    <ul class="plan-features">
+                        <li>유료 광고 집행</li>
+                        <li>프로덕트 기능 고도화</li>
+                        <li>디지털 툴 사용료</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 보장/검증 배지 -->
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">🛡️</div>
+                    <div class="badge-text">
+                        <p class="badge-title">환불 보장</p>
+                        <p class="badge-desc">목표 ROI 미달 시 환불</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">🔒</div>
+                    <div class="badge-text">
+                        <p class="badge-title">ISMS·NDA</p>
+                        <p class="badge-desc">보안 인증</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">📈</div>
+                    <div class="badge-text">
+                        <p class="badge-title">검증된 실적</p>
+                        <p class="badge-desc">12개월 MoM 10% 성장</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">👥</div>
+                    <div class="badge-text">
+                        <p class="badge-title">전담 팀</p>
+                        <p class="badge-desc">핵심 인력 전담 배정</p>
+                    </div>
+                </div>
+            </div>
+              <!-- 최종 CTA -->
+            <div class="final-cta">
+                <h3>지금 바로 성장 가능성을 확인해보세요</h3>
+                <a href="https://tally.so/r/3ypx5x" class="btn btn-white btn-large">무료 30분 진단 콜</a>
+            </div>
+            
+            <!-- ROI 계산기 모달 -->
+            <div class="roi-calculator-modal" id="roiCalculatorModal">
+                <div class="calculator-container">
+                    <div class="calculator-header">
+                        <h3>ROI 시뮬레이터</h3>
+                        <button class="close-modal">✕</button>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="input-group">
+                            <label for="monthlyUsers">월 사용자 수</label>
+                            <input type="number" id="monthlyUsers" placeholder="예: 10000">
+                        </div>
+                        <div class="input-group">
+                            <label for="averageRevenue">객단가 (원)</label>
+                            <input type="number" id="averageRevenue" placeholder="예: 50000">
+                        </div>
+                        <div class="input-group">
+                            <label for="currentConversion">현재 전환율 (%)</label>
+                            <input type="number" id="currentConversion" placeholder="예: 2.5" step="0.1">
+                        </div>
+                        <div class="calculator-results">
+                            <div class="result-item">
+                                <p class="result-label">예상 매출 증가</p>
+                                <p class="result-value" id="revenueIncrease">-</p>
+                            </div>
+                            <div class="result-item">
+                                <p class="result-label">예상 ROI</p>
+                                <p class="result-value" id="estimatedRoi">-</p>
+                            </div>
+                            <div class="result-item">
+                                <p class="result-label">추천 플랜</p>
+                                <p class="result-value" id="recommendedPlan">-</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-calculate" id="calculateRoiBtn">계산하기</button>
+                        <div class="calculator-cta">
+                            <p>상세 분석 리포트가 필요하신가요?</p>
+                            <a href="https://tally.so/r/3ypx5x" class="btn btn-outline">맞춤 진단 신청하기</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1999,10 +2220,10 @@
             </div>
             
             <!-- 채팅 CTA -->
-            <div class="chat-cta">
+            <!-- <div class="chat-cta">
                 <p>더 궁금한 점이 있으신가요?</p>
                 <a href="#" class="btn btn-primary">실시간 채팅 상담하기</a>
-            </div>
+            </div> -->
         </div>
     </section>
     
@@ -2076,8 +2297,7 @@
         [menuToggle, menuClose, overlay].forEach(el => el.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
             overlay.classList.toggle('show');
-        }));
-        // FAQ 링크 스무스 스크롤
+        }));        // FAQ 링크 스무스 스크롤
         document.querySelector('.faq-link')?.addEventListener('click', function(e) {
             e.preventDefault();
             const faqSection = document.querySelector('#faq');
@@ -2095,6 +2315,20 @@
             e.preventDefault();
             const teamSection = document.querySelector('#team');
             teamSection.scrollIntoView({ behavior: 'smooth' });
+        });
+          // 플랜/가격 링크 스무스 스크롤
+        document.querySelector('.plan-link')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const planSection = document.querySelector('#plan');
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            // 헤더 높이를 고려하여 스크롤 위치 계산
+            const offsetPosition = planSection.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         });
         
         // 탭 전환 기능
@@ -2143,14 +2377,32 @@
             mobileMenu.classList.remove('open');
             overlay.classList.remove('show');
         });
-        
-        // 모바일 메뉴 팀 소개 링크 스무스 스크롤
+          // 모바일 메뉴 팀 소개 링크 스무스 스크롤
         document.querySelector('.mobile-team-link')?.addEventListener('click', function(e) {
             e.preventDefault();
             const teamSection = document.querySelector('#team');
             
             // 팀 소개 섹션으로 스크롤
             teamSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // 모바일 메뉴 닫기
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        });
+          // 모바일 메뉴 플랜/가격 링크 스무스 스크롤
+        document.querySelector('.mobile-plan-link')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const planSection = document.querySelector('#plan');
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            // 헤더 높이를 고려하여 스크롤 위치 계산
+            const offsetPosition = planSection.offsetTop - headerHeight;
+            
+            // 플랜/가격 섹션으로 스크롤
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
             
             // 모바일 메뉴 닫기
             mobileMenu.classList.remove('open');
@@ -2254,6 +2506,148 @@
         });
     });
     </script>
+
+    <script>
+    // 플랜/가격 섹션 자바스크립트
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ 토글 기능
+        const faqToggleBtns = document.querySelectorAll('.faq-toggle-btn');
+        
+        faqToggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+                const icon = this.querySelector('span');
+                icon.textContent = content.classList.contains('active') ? '−' : '+';
+            });
+        });
+        
+        // ROI 계산기 모달
+        const roiCalculatorBtn = document.getElementById('roiCalculatorBtn');
+        const roiCalculatorTrigger = document.getElementById('roiCalculatorTrigger');
+        const roiCalculatorModal = document.getElementById('roiCalculatorModal');
+        const closeModalBtn = document.querySelector('.close-modal');
+        
+        function openRoiModal() {
+            roiCalculatorModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeRoiModal() {
+            roiCalculatorModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        if(roiCalculatorBtn) roiCalculatorBtn.addEventListener('click', openRoiModal);
+        if(roiCalculatorTrigger) roiCalculatorTrigger.addEventListener('click', openRoiModal);
+        if(closeModalBtn) closeModalBtn.addEventListener('click', closeRoiModal);
+        
+        // ROI 계산 기능
+        const calculateRoiBtn = document.getElementById('calculateRoiBtn');
+        
+        if(calculateRoiBtn) {
+            calculateRoiBtn.addEventListener('click', function() {
+                const users = parseFloat(document.getElementById('monthlyUsers').value) || 0;
+                const revenue = parseFloat(document.getElementById('averageRevenue').value) || 0;
+                const conversion = parseFloat(document.getElementById('currentConversion').value) || 0;
+                
+                // 간단한 ROI 계산 로직 (실제로는 더 복잡할 수 있음)
+                const currentMonthlyRevenue = users * (conversion / 100) * revenue;
+                const estimatedNewConversion = conversion * 1.3; // 30% 증가 가정
+                const newMonthlyRevenue = users * (estimatedNewConversion / 100) * revenue;
+                const revenueIncrease = newMonthlyRevenue - currentMonthlyRevenue;
+                const quarterlyIncrease = revenueIncrease * 3;
+                
+                // 3개월 투자 비용 대비 추가 매출 (ROI)
+                const investmentCost = 40000000; // 4천만원 가정
+                const roi = (quarterlyIncrease / investmentCost).toFixed(1);
+                
+                // 결과 업데이트
+                document.getElementById('revenueIncrease').textContent = Math.round(quarterlyIncrease).toLocaleString() + '원';
+                document.getElementById('estimatedRoi').textContent = roi + 'x';
+                
+                // 추천 플랜
+                let recommendedPlan = '';
+                if(users < 5000) {
+                    recommendedPlan = 'Growth Boost 12W';
+                } else if(users < 50000) {
+                    recommendedPlan = 'Dual Track Scale';
+                } else {
+                    recommendedPlan = 'Dual Track Scale + 맞춤 모듈';
+                }
+                
+                document.getElementById('recommendedPlan').textContent = recommendedPlan;
+            });
+        }
+        
+        // PDF 견적서 및 모듈 리스트 다운로드 (실제로는 서버 통신 필요)
+        const pdfQuoteBtn = document.getElementById('pdfQuoteBtn');
+        const moduleListBtn = document.getElementById('moduleListBtn');
+        
+        function promptForEmail(title, actionText) {
+            const email = prompt(`${title}\n이메일을 입력하시면 ${actionText} 보내드립니다.`);
+            if(email && email.includes('@')) {
+                alert(`${email}로 자료를 발송했습니다!`);
+                return true;
+            } else if(email) {
+                alert('유효한 이메일을 입력해주세요.');
+            }
+            return false;
+        }
+        
+        if(pdfQuoteBtn) {
+            pdfQuoteBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                promptForEmail('견적서 다운로드', '즉시 견적서를');
+            });
+        }
+        
+        if(moduleListBtn) {
+            moduleListBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                promptForEmail('모듈 리스트 다운로드', '모듈 카탈로그를');
+            });
+        }
+        
+        // 실제 견적 예시 보기
+        const realQuotesLink = document.getElementById('realQuotesLink');
+        
+        if(realQuotesLink) {
+            realQuotesLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://docs.google.com/spreadsheets/d/example-sheet-id', '_blank');
+            });
+        }
+          // 가격 토글 기능 추가 - 섹션 레벨 토글
+        const monthlyToggle = document.getElementById('monthlyToggle');
+        const lumpSumToggle = document.getElementById('lumpSumToggle');
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const lumpSumPrices = document.querySelectorAll('.lump-sum-price');
+        
+        if (monthlyToggle && lumpSumToggle) {
+            monthlyToggle.addEventListener('click', () => {
+                // 토글 버튼 스타일 변경
+                monthlyToggle.classList.add('active');
+                lumpSumToggle.classList.remove('active');
+                
+                // 모든 가격 표시 업데이트
+                monthlyPrices.forEach(price => price.classList.remove('hidden'));
+                lumpSumPrices.forEach(price => price.classList.add('hidden'));
+            });
+            
+            lumpSumToggle.addEventListener('click', () => {
+                // 토글 버튼 스타일 변경
+                lumpSumToggle.classList.add('active');
+                monthlyToggle.classList.remove('active');
+                
+                // 모든 가격 표시 업데이트
+                lumpSumPrices.forEach(price => price.classList.remove('hidden'));
+                monthlyPrices.forEach(price => price.classList.add('hidden'));
+            });
+        }
+    });
+    </script>
+
 
 </body>
 </html>
