@@ -46,6 +46,9 @@ async function loadComponents() {
         if (typeof initClientListSlide === 'function') {
             initClientListSlide();
         }
+        if (typeof initAOS === 'function') {
+            initAOS();
+        }
     };
     document.body.appendChild(script);
 }
