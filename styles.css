@@ -120,10 +120,6 @@ header {
     gap: 6px;
 }
 
-.mobile-menu-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
 /* 햄버거 라인 스타일 */
 .hamburger-line {
     display: block;
@@ -515,7 +511,7 @@ footer {
     right: -100%;
     width: 100%;
     height: calc(100% - 80px);
-    background-color: var(--white);
+    background-color: var(--light-bg);
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 1001;
