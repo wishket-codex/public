@@ -33,6 +33,9 @@ function initMainScripts() {
                     menuToggle.classList.remove('active');
                 }
                 
+                // 메뉴 상태 변경 후 헤더 shadow 업데이트
+                updateHeaderShadow();
+                
                 console.log('Mobile menu state:', {
                     isOpen: mobileMenu.classList.contains('open'),
                     overlayVisible: overlay.classList.contains('show'),
@@ -60,6 +63,9 @@ function initMainScripts() {
                     overlay.classList.toggle('show');
                     menuToggle.classList.toggle('active');
                     console.log('Mobile menu toggled via delegation');
+                    
+                    // 헤더 shadow 업데이트
+                    updateHeaderShadow();
                 }
             }
             
@@ -78,6 +84,9 @@ function initMainScripts() {
                     overlay.classList.remove('show');
                     menuToggle.classList.remove('active');
                     console.log('Mobile menu closed via overlay click');
+                    
+                    // 헤더 shadow 업데이트
+                    updateHeaderShadow();
                 }
             }
         });
@@ -109,6 +118,9 @@ function initMainScripts() {
                     overlayRetry.classList.toggle('show');
                     menuToggleRetry.classList.toggle('active');
                     console.log('Mobile menu toggled directly');
+                    
+                    // 헤더 shadow 업데이트
+                    updateHeaderShadow();
                 }
             });
             menuToggleRetry._hasClickListener = true;
@@ -192,6 +204,22 @@ function initMainScripts() {
         });
     });
 
+    // 헤더 box-shadow 업데이트 함수
+    function updateHeaderShadow() {
+        const header = document.querySelector('header');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (header) {
+            const isMobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
+            
+            if (window.scrollY > 50 && !isMobileMenuOpen) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        }
+    }
+
     // 모바일 메뉴 링크 클릭 시 메뉴 닫기 기능
     function closeMobileMenu() {
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -203,6 +231,9 @@ function initMainScripts() {
             overlay.classList.remove('show');
             menuToggle.classList.remove('active');
             console.log('Mobile menu closed after link click');
+            
+            // 메뉴 닫은 후 헤더 shadow 업데이트
+            updateHeaderShadow();
         }
     }
     
@@ -298,14 +329,7 @@ function initMainScripts() {
     
     // 스크롤 헤더 효과
     window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (header) {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        }
+        updateHeaderShadow();
     });
 }
 
