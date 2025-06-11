@@ -644,3 +644,29 @@ if (document.readyState === 'loading') {
 } else {
     initClientListSlide();
 }
+
+// AOS 초기화 함수
+function initAOS() {
+    console.log('Initializing AOS...');
+    
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800, // 애니메이션 지속시간 (밀리초)
+            easing: 'ease-out-cubic', // 이징 함수
+            once: true, // 한 번만 애니메이션 실행 (스크롤 올릴 때 다시 실행되지 않음)
+            offset: 50, // 애니메이션 시작 지점 (픽셀)
+            delay: 0, // 애니메이션 지연 시간
+            disable: false // 모바일에서도 애니메이션 활성화
+        });
+        console.log('AOS initialized successfully');
+    } else {
+        console.log('AOS library not loaded');
+    }
+}
+
+// DOM이 이미 로드된 경우와 그렇지 않은 경우 모두 처리
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAOS);
+} else {
+    initAOS();
+}
