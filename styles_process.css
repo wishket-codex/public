@@ -309,12 +309,112 @@
     gap: 40px;
   }
   
-  .timeline-header, .timeline-row {
-    grid-template-columns: 1fr 0.5fr 1.5fr;
+  /* 모바일에서 표를 카드 형태로 변환 */
+  .detailed-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: transparent;
+    box-shadow: none;
   }
   
-  .deliverables-cell, .involvement-cell {
+  .timeline-header {
     display: none;
+  }
+  
+  .timeline-row {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .timeline-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    background-color: white;
+  }
+  
+  .timeline-row > div {
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  
+  .timeline-row > div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .module-cell {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .module-cell h4 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  
+  .duration-cell {
+    display: inline-block;
+    background: #e8f4fd;
+    color: #0066cc;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .activities-cell {
+    margin-bottom: 16px;
+  }
+  
+  .activities-cell:before {
+    content: "📋 핵심 활동";
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .activities-cell ul {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 0;
+  }
+  
+  .activities-cell li {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  
+  .deliverables-cell {
+    margin-bottom: 16px;
+  }
+  
+  .deliverables-cell:before {
+    content: "📄 주요 산출물";
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .involvement-cell:before {
+    content: "👥 고객 참여도";
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
   }
   
   .process-benefits {
@@ -416,6 +516,34 @@
     font-size: 14px;
   }
   
+  /* 모바일 카드 스타일 조정 */
+  .timeline-row {
+    padding: 16px;
+  }
+  
+  .module-cell h4 {
+    font-size: 16px;
+  }
+  
+  .duration-cell {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  
+  .activities-cell:before,
+  .deliverables-cell:before,
+  .involvement-cell:before {
+    font-size: 13px;
+  }
+  
+  .activities-cell ul {
+    padding: 10px 14px;
+  }
+  
+  .activities-cell li {
+    font-size: 13px;
+  }
+  
   .timeline-modules {
     gap: 16px;
   }
@@ -459,21 +587,61 @@
 }
 
 @media (max-width: 480px) {
-  /* 모든 grid를 1열로 강제 설정 */
-  .timeline-header, 
+  /* 모바일 카드 스타일 최적화 */
+  .detailed-timeline {
+    gap: 12px;
+  }
+  
   .timeline-row {
-    grid-template-columns: repeat(1, 1fr) !important;
+    padding: 14px;
+    margin: 0 4px;
+  }
+  
+  .module-cell {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .module-cell h4 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  
+  .duration-cell {
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-bottom: 12px;
+  }
+  
+  .activities-cell:before,
+  .deliverables-cell:before,
+  .involvement-cell:before {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  
+  .activities-cell {
+    margin-bottom: 12px;
+  }
+  
+  .activities-cell ul {
+    padding: 8px 12px;
+  }
+  
+  .activities-cell li {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .deliverables-cell,
+  .involvement-cell {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.4;
   }
   
   .process-benefits {
     flex-direction: column !important;
     gap: 12px !important;
-  }
-  
-  .deliverables-cell, 
-  .involvement-cell {
-    display: block !important;
-    padding: 8px !important;
-    font-size: 12px !important;
   }
 }
