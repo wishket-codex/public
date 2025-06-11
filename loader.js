@@ -43,6 +43,9 @@ async function loadComponents() {
         if (typeof initPricingSection === 'function') {
             initPricingSection();
         }
+        if (typeof initClientListSlide === 'function') {
+            initClientListSlide();
+        }
     };
     document.body.appendChild(script);
 }
