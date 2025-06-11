@@ -495,3 +495,51 @@ if (document.readyState === 'loading') {
 } else {
     initPricingSection();
 }
+
+// 클라이언트 리스트 슬라이드 초기화 함수
+function initClientListSlide() {
+    console.log('Initializing client list slide...');
+    
+    const clientLogosWrapper = document.querySelector('.client-logos-wrapper');
+    const clientLogosTrack = document.querySelector('.client-logos-track');
+    
+    if (clientLogosWrapper && clientLogosTrack) {
+        console.log('Client logos elements found');
+        
+        // 창 크기 변경 시 애니메이션 재설정 (모바일/데스크톱 전환 시)
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // 모바일에서만 애니메이션 동작하도록 체크
+                if (window.innerWidth <= 768) {
+                    clientLogosTrack.style.animation = 'none';
+                    // 강제로 reflow 후 다시 애니메이션 적용
+                    void clientLogosTrack.offsetWidth;
+                    clientLogosTrack.style.animation = '';
+                    console.log('Client slide animation reset for mobile');
+                }
+            }, 200);
+        });
+        
+        // 터치 이벤트로 애니메이션 일시정지/재생 (모바일)
+        if ('ontouchstart' in window) {
+            clientLogosWrapper.addEventListener('touchstart', () => {
+                clientLogosTrack.style.animationPlayState = 'paused';
+            });
+            
+            clientLogosWrapper.addEventListener('touchend', () => {
+                clientLogosTrack.style.animationPlayState = 'running';
+            });
+        }
+    } else {
+        console.log('Client logos elements not found');
+    }
+}
+
+// DOM이 이미 로드된 경우와 그렇지 않은 경우 모두 처리
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initClientListSlide);
+} else {
+    initClientListSlide();
+}

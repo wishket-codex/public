@@ -1895,3 +1895,83 @@ html {
         padding: 0 15px;
     }
 }
+
+/* 클라이언트 리스트 섹션 */
+.client-list {
+    padding: 60px 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.client-logos-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.client-logos-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.client-logos-track img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* 데스크톱에서는 복제 이미지 숨김 */
+.client-logos-track .mobile-duplicate {
+    display: none;
+}
+
+/* 모바일에서만 슬라이드 애니메이션 적용 */
+@media (max-width: 768px) {
+    .client-list {
+        padding: 40px 0;
+    }
+    
+    .client-logos-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .client-logos-track {
+        animation: client-slide 20s linear infinite;
+        width: 200%; /* 복제 이미지까지 포함한 너비 */
+    }
+    
+    .client-logos-track img {
+        width: 50%; /* 각 이미지가 전체 뷰포트의 50%를 차지 */
+    }
+    
+    /* 모바일에서 복제 이미지 표시 */
+    .client-logos-track .mobile-duplicate {
+        display: block;
+    }
+    
+    /* 무한 슬라이드 애니메이션 */
+    @keyframes client-slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    
+    /* 호버 시 애니메이션 일시정지 */
+    .client-logos-wrapper:hover .client-logos-track {
+        animation-play-state: paused;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-list {
+        padding: 30px 0;
+    }
+    
+    .client-logos-track {
+        animation-duration: 15s; /* 작은 화면에서는 조금 더 빠르게 */
+    }
+}
