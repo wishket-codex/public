@@ -6,12 +6,113 @@ function initMainScripts() {
     const menuClose = document.querySelector('.mobile-menu-close');
     const overlay = document.querySelector('.overlay');
     
+    console.log('Mobile menu elements:', {
+        menuToggle,
+        mobileMenu, 
+        menuClose,
+        overlay
+    });
+    
     if (menuToggle && mobileMenu && menuClose && overlay) {
-        [menuToggle, menuClose, overlay].forEach(el => el.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            overlay.classList.toggle('show');
-        }));
+        console.log('All mobile menu elements found, adding event listeners');
+        
+        [menuToggle, menuClose, overlay].forEach(el => {
+            el.addEventListener('click', (e) => {
+                console.log('Mobile menu element clicked:', el);
+                e.preventDefault();
+                
+                mobileMenu.classList.toggle('open');
+                overlay.classList.toggle('show');
+                
+                console.log('Mobile menu state:', {
+                    isOpen: mobileMenu.classList.contains('open'),
+                    overlayVisible: overlay.classList.contains('show')
+                });
+            });
+        });
+    } else {
+        console.log('Some mobile menu elements not found');
     }
+    
+    // 이벤트 위임 방식으로도 모바일 메뉴 처리 (백업용)
+    if (!document._mobileMenuEventAdded) {
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.mobile-menu-toggle')) {
+                console.log('Mobile menu toggle clicked via delegation');
+                e.preventDefault();
+                
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const overlay = document.querySelector('.overlay');
+                
+                if (mobileMenu && overlay) {
+                    mobileMenu.classList.toggle('open');
+                    overlay.classList.toggle('show');
+                    console.log('Mobile menu toggled via delegation');
+                }
+            }
+            
+            if (e.target.closest('.mobile-menu-close')) {
+                console.log('Mobile menu close clicked via delegation');
+                e.preventDefault();
+                
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const overlay = document.querySelector('.overlay');
+                
+                if (mobileMenu && overlay) {
+                    mobileMenu.classList.remove('open');
+                    overlay.classList.remove('show');
+                    console.log('Mobile menu closed via delegation');
+                }
+            }
+            
+            if (e.target.closest('.overlay')) {
+                console.log('Overlay clicked via delegation');
+                e.preventDefault();
+                
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const overlay = document.querySelector('.overlay');
+                
+                if (mobileMenu && overlay) {
+                    mobileMenu.classList.remove('open');
+                    overlay.classList.remove('show');
+                    console.log('Mobile menu closed via overlay click');
+                }
+            }
+        });
+        
+        document._mobileMenuEventAdded = true;
+    }
+    
+    // 1초 후 모바일 메뉴 요소들 재확인
+    setTimeout(() => {
+        const menuToggleRetry = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuRetry = document.querySelector('.mobile-menu');
+        const menuCloseRetry = document.querySelector('.mobile-menu-close');
+        const overlayRetry = document.querySelector('.overlay');
+        
+        console.log('Mobile menu elements after timeout:', {
+            menuToggle: menuToggleRetry,
+            mobileMenu: mobileMenuRetry,
+            menuClose: menuCloseRetry,
+            overlay: overlayRetry
+        });
+        
+        if (menuToggleRetry && !menuToggleRetry._hasClickListener) {
+            console.log('Adding direct click listener to mobile menu toggle');
+            menuToggleRetry.addEventListener('click', function(e) {
+                console.log('Direct mobile menu toggle clicked');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (mobileMenuRetry && overlayRetry) {
+                    mobileMenuRetry.classList.toggle('open');
+                    overlayRetry.classList.toggle('show');
+                    console.log('Mobile menu toggled directly');
+                }
+            });
+            menuToggleRetry._hasClickListener = true;
+        }
+    }, 1000);
 
     // FAQ 링크 스무스 스크롤
     const faqLink = document.querySelector('.faq-link');
