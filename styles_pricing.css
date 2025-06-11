@@ -141,7 +141,7 @@
 .price-from {
   font-size: 32px;
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--primary-dark, #0a223f);
   white-space: nowrap;
 }
 
