@@ -192,6 +192,35 @@ function initMainScripts() {
         });
     });
 
+    // 모바일 메뉴 링크 클릭 시 메뉴 닫기 기능
+    function closeMobileMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (mobileMenu && overlay && menuToggle) {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('show');
+            menuToggle.classList.remove('active');
+            console.log('Mobile menu closed after link click');
+        }
+    }
+    
+    // 모든 모바일 메뉴 링크에 닫기 기능 추가
+    document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            console.log('Mobile menu link clicked:', this.textContent);
+            // 링크가 해시(#)로 시작하는 경우나 외부 링크가 아닌 경우 메뉴 닫기
+            const href = this.getAttribute('href');
+            if (href && (href.startsWith('#') || !href.startsWith('http'))) {
+                // 약간의 지연을 두어 스크롤 애니메이션이 시작된 후 메뉴 닫기
+                setTimeout(() => {
+                    closeMobileMenu();
+                }, 100);
+            }
+        });
+    });
+
     // 모바일 메뉴 FAQ 링크 스무스 스크롤
     const mobileFaqLink = document.querySelector('.mobile-faq-link');
     console.log('Mobile FAQ link found:', mobileFaqLink);
@@ -201,14 +230,13 @@ function initMainScripts() {
         console.log('Mobile FAQ link clicked');
         const faqSection = document.querySelector('#faq');
         
-        if (faqSection && mobileMenu && overlay) {
+        if (faqSection) {
             // FAQ 섹션으로 스크롤
             faqSection.scrollIntoView({ behavior: 'smooth' });
             console.log('Scrolled to FAQ section from mobile menu');
             
             // 모바일 메뉴 닫기
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('show');
+            closeMobileMenu();
         }
     });
 
@@ -217,13 +245,12 @@ function initMainScripts() {
         e.preventDefault();
         const servicesSection = document.querySelector('#services');
         
-        if (servicesSection && mobileMenu && overlay) {
+        if (servicesSection) {
             // 서비스 소개 섹션으로 스크롤
             servicesSection.scrollIntoView({ behavior: 'smooth' });
             
             // 모바일 메뉴 닫기
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('show');
+            closeMobileMenu();
         }
     });
 
@@ -232,13 +259,12 @@ function initMainScripts() {
         e.preventDefault();
         const teamSection = document.querySelector('#team');
         
-        if (teamSection && mobileMenu && overlay) {
+        if (teamSection) {
             // 팀 소개 섹션으로 스크롤
             teamSection.scrollIntoView({ behavior: 'smooth' });
             
             // 모바일 메뉴 닫기
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('show');
+            closeMobileMenu();
         }
     });
 
@@ -248,7 +274,7 @@ function initMainScripts() {
         const planSection = document.querySelector('#plan');
         const header = document.querySelector('header');
         
-        if (planSection && header && mobileMenu && overlay) {
+        if (planSection && header) {
             const headerHeight = header.offsetHeight;
             const offsetPosition = planSection.offsetTop - headerHeight;
             
@@ -259,8 +285,7 @@ function initMainScripts() {
             });
             
             // 모바일 메뉴 닫기
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('show');
+            closeMobileMenu();
         }
     });
     
