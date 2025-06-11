@@ -325,6 +325,38 @@ function initFaqAndProcessTabs() {
     // FAQ 아코디언 기능 - 이벤트 위임 방식 사용
     console.log('Initializing FAQ accordion...');
     
+    // FAQ 항목 애니메이션 헬퍼 함수
+    function toggleFaqItem(faqItem, shouldOpen) {
+        const faqAnswer = faqItem.querySelector('.faq-answer');
+        
+        if (shouldOpen) {
+            // 열기 애니메이션
+            faqItem.classList.add('active');
+            
+            // 실제 높이 계산
+            const realHeight = faqAnswer.scrollHeight;
+            faqAnswer.style.maxHeight = realHeight + 'px';
+            
+            // 애니메이션 완료 후 max-height를 auto로 설정 (내용이 더 늘어날 수 있도록)
+            setTimeout(() => {
+                if (faqItem.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = 'none';
+                }
+            }, 400);
+        } else {
+            // 닫기 애니메이션
+            // 먼저 현재 높이를 명시적으로 설정
+            faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+            
+            // 강제 reflow
+            faqAnswer.offsetHeight;
+            
+            // 0으로 애니메이션
+            faqAnswer.style.maxHeight = '0px';
+            faqItem.classList.remove('active');
+        }
+    }
+    
     // 중복 이벤트 방지를 위한 체크
     if (!document._faqEventListenerAdded) {
         // document에 이벤트 위임으로 FAQ 토글 처리
@@ -344,16 +376,15 @@ function initFaqAndProcessTabs() {
                     // 모든 FAQ 항목 닫기
                     const allFaqItems = document.querySelectorAll('.faq-item');
                     allFaqItems.forEach(item => {
-                        item.classList.remove('active');
+                        if (item !== faqItem) {
+                            toggleFaqItem(item, false);
+                        }
                     });
                     
-                    // 클릭한 항목이 이미 열려있지 않으면 열기
-                    if (!alreadyActive) {
-                        faqItem.classList.add('active');
-                        console.log('FAQ item opened');
-                    } else {
-                        console.log('FAQ item closed');
-                    }
+                    // 클릭한 항목 토글
+                    toggleFaqItem(faqItem, !alreadyActive);
+                    
+                    console.log(alreadyActive ? 'FAQ item closed' : 'FAQ item opened');
                 }
             }
             
@@ -372,16 +403,15 @@ function initFaqAndProcessTabs() {
                     // 모든 FAQ 항목 닫기
                     const allFaqItems = document.querySelectorAll('.faq-item');
                     allFaqItems.forEach(item => {
-                        item.classList.remove('active');
+                        if (item !== faqItem) {
+                            toggleFaqItem(item, false);
+                        }
                     });
                     
-                    // 클릭한 항목이 이미 열려있지 않으면 열기
-                    if (!alreadyActive) {
-                        faqItem.classList.add('active');
-                        console.log('FAQ item opened via question click');
-                    } else {
-                        console.log('FAQ item closed via question click');
-                    }
+                    // 클릭한 항목 토글
+                    toggleFaqItem(faqItem, !alreadyActive);
+                    
+                    console.log(alreadyActive ? 'FAQ item closed via question click' : 'FAQ item opened via question click');
                 }
             }
         });
