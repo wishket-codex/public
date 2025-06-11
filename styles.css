@@ -532,6 +532,8 @@ footer {
     .strategy-grid,
     .ai-features { grid-template-columns: 1fr 1fr; }
 
+    .needs-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
     .tools-table-header,
     .tools-table-row { grid-template-columns: 1fr 1fr; }
 
@@ -547,6 +549,8 @@ footer {
     .strategy-grid,
     .ai-features,
     .tech-grid { grid-template-columns: 1fr; }
+    
+    .needs-grid { grid-template-columns: 1fr !important; }
     
     .hero-cta {
         flex-direction: column;
