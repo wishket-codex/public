@@ -2277,20 +2277,3 @@ html {
     }
 }
 
-.discount-badge {
-  background-color: #ff4d4d;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 0.9em;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-.original-price {
-  text-decoration: line-through;
-  color: #999;
-  margin-right: 10px;
-  font-size: 0.9em;
-}
