@@ -87,6 +87,11 @@
   box-shadow: 0 8px 30px rgba(59, 163, 199, 0.15);
 }
 
+.pricing-card.discount {
+  border: 2px solid var(--secondary, #ff5722);
+  box-shadow: 0 8px 30px rgba(59, 163, 199, 0.15);
+}
+
 .card-badge {
   position: absolute;
   top: -10px;
@@ -500,8 +505,10 @@
 .original-price {
   text-decoration: line-through;
   color: #999;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
+  margin-left: 4px;
+  line-height: 1;
 }
 
 .discount-info {
