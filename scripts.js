@@ -189,17 +189,54 @@ function initMainScripts() {
     }));
 
     // 인덱스 링크 부드러운 스크롤 기능
+    // document.querySelectorAll('.index-link').forEach(link => {
+    //     link.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         const targetId = this.getAttribute('href');
+    //         const targetElement = document.querySelector(targetId);
+            
+    //         if (targetElement) {
+    //             window.scrollTo({
+    //                 top: targetElement.offsetTop - 80,
+    //                 behavior: 'smooth'
+    //             });
+    //         }
+    //     });
+    // });
+
+    // 인덱스 링크 부드러운 스크롤 기능 (개선된 버전)
     document.querySelectorAll('.index-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             
+            console.log(`Index link clicked: ${targetId}`);
+            
             if (targetElement) {
+                // 헤더 높이 정확히 계산 (고정값 대신)
+                const headerHeight = document.querySelector('header')?.offsetHeight || 80;
+                
+                // 추가 offset 설정 (상황에 따라 조정)
+                const additionalOffset = 20;
+                const totalOffset = headerHeight + additionalOffset;
+                
+                console.log(`Scrolling to ${targetId}, header height: ${headerHeight}px, total offset: ${totalOffset}px`);
+                
+                // 스크롤 위치 계산 
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - totalOffset;
+                
+                // 부드러운 스크롤 적용
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
+                
+                // 디버깅
+                console.log(`Element position: ${elementPosition}, Window offset: ${window.pageYOffset}, Final position: ${offsetPosition}`);
+            } else {
+                console.error(`Target element not found: ${targetId}`);
             }
         });
     });
