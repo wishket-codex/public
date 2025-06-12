@@ -478,6 +478,140 @@
   margin-bottom: 10px;
 }
 
+/* Discovery Sprint 할인 스타일 - 개선된 레이아웃 */
+.price-layout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.discounted-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* 상단 할인 정보 라인 */
+.discounted-price > div > div[style*="display: flex"] {
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.discount-info {
+  background: #ff4757;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.limited-offer-top {
+  color: #666;
+  font-size: 11px;
+  font-weight: 500;
+  background: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  line-height: 1;
+}
+
+/* 메인 가격 */
+.discounted-price .price-from {
+  color: #333;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.discounted-price .price-unit {
+  color: #333;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.price-info-right {
+  display: none;
+}
+
+/* Discovery Sprint 카드만 가격 컨테이너 스타일링 */
+.pricing-card:first-child .plan-price {
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+}
+
+/* 반응형 - Discovery Sprint 개선된 레이아웃 */
+@media (max-width: 768px) {
+  .discounted-price > div > div[style*="display: flex"] {
+    gap: 3px;
+    margin-bottom: 3px;
+  }
+  
+  .original-price {
+    font-size: 12px;
+  }
+  
+  .discount-info {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+  
+  .limited-offer-top {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+  
+  .discounted-price .price-from {
+    font-size: 32px;
+  }
+  
+  .discounted-price .price-unit {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discounted-price > div > div[style*="display: flex"] {
+    gap: 2px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  
+  .original-price {
+    font-size: 11px;
+  }
+  
+  .discount-info {
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+  
+  .limited-offer-top {
+    font-size: 9px;
+    padding: 1px 3px;
+  }
+  
+  .discounted-price .price-from {
+    font-size: 28px;
+  }
+  
+  .discounted-price .price-unit {
+    font-size: 18px;
+  }
+}
+
 /* 반응형 */
 @media (max-width: 1024px) {
   .pricing-cards {
